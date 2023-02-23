@@ -2853,12 +2853,9 @@ char valADC[3];
 char unidad;
 char decena;
 
-uint8_t sec, segundo;
-uint8_t min, minuto;
-uint8_t hor, hora;
-uint8_t fecha, fecha1;
-uint8_t mes, mes1;
-uint8_t year, year1;
+uint8_t sec, segundos;
+uint8_t min, minutos;
+
 uint8_t modo;
 
 void portsetup(void);
@@ -2878,13 +2875,15 @@ void main(void) {
     Lcd_Write_String(":  :");
 
     modo = 0;
+    sec = 0;
+    min = 0;
 
     enviar_x(0, 0);
 
     while(1){
         PORTA = modo;
 
-
+        enviar_x(0, 0);
 
         sec = leer_x(0x00);
         Escribir_dato(sec, 14, 1);
@@ -2895,6 +2894,9 @@ void main(void) {
         if(!PORTBbits.RB4){
             _delay((unsigned long)((20)*(8000000/4000.0)));
             while(PORTBbits.RB3){
+                _delay((unsigned long)((30)*(8000000/4000.0)));
+                Escribir_dato(sec, 14, 1);
+                Escribir_dato(min, 11, 1);
 
                 if(PORTBbits.RB7 == 0){
                     _delay((unsigned long)((20)*(8000000/4000.0)));
@@ -2907,7 +2909,7 @@ void main(void) {
                 }
 
                 if(PORTBbits.RB6 == 0){
-                    _delay((unsigned long)((20)*(8000000/4000.0)));
+                    _delay((unsigned long)((50)*(8000000/4000.0)));
                     if (modo == 0){
                         if (sec<59){
                             sec ++;
@@ -2924,14 +2926,12 @@ void main(void) {
                             min = 0;
                         }
                     }
-                    sec = desconvertir(sec);
-                    min = desconvertir(min);
-                    enviar_x(sec, min);
+
                 }
 
 
                 if(PORTBbits.RB5 == 0){
-                    _delay((unsigned long)((20)*(8000000/4000.0)));
+                    _delay((unsigned long)((50)*(8000000/4000.0)));
 
                     if (modo == 0){
                         if (sec > 0){
@@ -2949,11 +2949,13 @@ void main(void) {
                             min = 59;
                         }
                     }
-                    sec = desconvertir(sec);
-                    min = desconvertir(min);
-                    enviar_x(sec, min);
                 }
             }
+
+
+
+
+
         }
     }
 }
@@ -2966,9 +2968,9 @@ void portsetup(){
     PORTD = 0;
 
 
-    TRISB = 0b11110000;
-    PORTB = 0b11110000;
-    WPUB = 0b11110000;
+    TRISB = 0b11111000;
+    PORTB = 0b11111000;
+    WPUB = 0b11111000;
     OPTION_REGbits.nRBPU = 0;
 
     I2C_Master_Init(100000);

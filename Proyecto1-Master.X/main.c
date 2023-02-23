@@ -52,12 +52,9 @@ char valADC[3];
 char unidad;
 char decena;
 
-uint8_t sec, segundo;
-uint8_t min, minuto;
-uint8_t hor, hora;
-uint8_t fecha, fecha1;
-uint8_t mes, mes1;
-uint8_t year, year1;
+uint8_t sec, segundos;
+uint8_t min, minutos;
+
 uint8_t modo;
 
 void portsetup(void);
@@ -77,13 +74,15 @@ void main(void) {
     Lcd_Write_String(":  :");
 
     modo = 0;
+    sec = 0;
+    min = 0;
     // Valores iniciales de fecha y hora
     enviar_x(0, 0);
     
     while(1){
         PORTA = modo;
         
-        
+        enviar_x(0, 0); // Enviar datos al RTC
         // Comunicación con DS3231
         sec = leer_x(0x00);     // Leer segundo
         Escribir_dato(sec, 14, 1);
@@ -93,9 +92,12 @@ void main(void) {
               
         if(!PORTBbits.RB4){     // Entrar al modo de configuración de tiempo
             __delay_ms(20);
-            while(PORTBbits.RB3){
+            while(PORTBbits.RB3){   // Sale del modo hasta que se presiona B3
+                __delay_ms(30);
+                Escribir_dato(sec, 14, 1);
+                Escribir_dato(min, 11, 1);
                 // Cambio de modo
-                if(PORTBbits.RB7 == 0){ // Botón que selecciona m, h, d, m, a
+                if(PORTBbits.RB7 == 0){ // Botón que cambia entre minutos y segundos
                     __delay_ms(20);
                     if (modo < 1){
                         modo += 1;
@@ -105,8 +107,8 @@ void main(void) {
                     }
                 }
                 // Incrementos
-                if(PORTBbits.RB6 == 0){
-                    __delay_ms(20);
+                if(PORTBbits.RB6 == 0){ // Si se presiona incrementa
+                    __delay_ms(50);
                     if (modo == 0){
                         if (sec<59){
                             sec ++;   
@@ -123,14 +125,12 @@ void main(void) {
                             min = 0;
                         }
                     }           
-                    sec = desconvertir(sec);
-                    min = desconvertir(min);
-                    enviar_x(sec, min);
+                    
                 }
 
                 // Decrementos
-                if(PORTBbits.RB5 == 0){
-                    __delay_ms(20);
+                if(PORTBbits.RB5 == 0){ // Si se presiona decrementa
+                    __delay_ms(50);
 
                     if (modo == 0){
                         if (sec > 0){
@@ -148,11 +148,13 @@ void main(void) {
                             min = 59;
                         }
                     }
-                    sec = desconvertir(sec);
-                    min = desconvertir(min);
-                    enviar_x(sec, min);
-                }
-            }        
+                }  
+            } 
+            
+            //
+//            segundos = desconvertir(sec);
+//            minutos = desconvertir(min);
+            
         }
     }
 }
@@ -165,9 +167,9 @@ void portsetup(){
     PORTD = 0;
     
     // Configuración del puerto B 
-    TRISB = 0b11110000;
-    PORTB = 0b11110000;
-    WPUB = 0b11110000;      // Habilita el Weak Pull-Up en el puerto B
+    TRISB = 0b11111000;
+    PORTB = 0b11111000;
+    WPUB = 0b11111000;      // Habilita el Weak Pull-Up en el puerto B
     OPTION_REGbits.nRBPU = 0;   // Deshabilita el bit de RBPU
     
     I2C_Master_Init(100000);        // Inicializar Comuncación I2C
