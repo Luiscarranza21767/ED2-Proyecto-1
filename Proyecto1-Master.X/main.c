@@ -66,12 +66,11 @@ void main(void) {
     // Inicio y constantes del display
     Lcd_Init();
     Lcd_Clear();
-    Lcd_Set_Cursor(1,2);
-    Lcd_Write_String("S1: ");
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("    V");
-    Lcd_Set_Cursor(1,10);
-    Lcd_Write_String(":  :");
+    Lcd_Set_Cursor(1,13);
+    Lcd_Write_Char(':');
+    Lcd_Set_Cursor(2,9);
+    Lcd_Write_String("S:  :");
+    
 
     modo = 0;
     sec = 0;
@@ -149,7 +148,19 @@ void main(void) {
                         }
                     }
                 }  
-            } 
+            }
+            enviar_x(0,0);
+            Escribir_dato(sec, 14, 2);
+            Escribir_dato(min, 11, 2);
+            while(PORTBbits.RB2 & !((sec == segundos) & (min == minutos)) ){ //Mientras no se presione cancelar o no termine
+                segundos = leer_x(0x00);
+                minutos = leer_x(0x01);
+                Escribir_dato(segundos, 14, 1);
+                Escribir_dato(minutos, 11, 1);
+                
+            
+            }
+            
             
             //
 //            segundos = desconvertir(sec);
@@ -167,9 +178,9 @@ void portsetup(){
     PORTD = 0;
     
     // Configuración del puerto B 
-    TRISB = 0b11111000;
-    PORTB = 0b11111000;
-    WPUB = 0b11111000;      // Habilita el Weak Pull-Up en el puerto B
+    TRISB = 0b11111100;
+    PORTB = 0b11111100;
+    WPUB = 0b11111100;      // Habilita el Weak Pull-Up en el puerto B
     OPTION_REGbits.nRBPU = 0;   // Deshabilita el bit de RBPU
     
     I2C_Master_Init(100000);        // Inicializar Comuncación I2C
