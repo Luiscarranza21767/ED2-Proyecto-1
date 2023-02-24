@@ -9,11 +9,11 @@
 ### Memory Usage ###
  Intel Hex-file ranges:
   0h - 1Dh		(dist/default/production\Proyecto1-Master.X.production.hex)
-  24Ch - FFFh		(dist/default/production\Proyecto1-Master.X.production.hex)
+  220h - FFFh		(dist/default/production\Proyecto1-Master.X.production.hex)
   4000h - 4007h		(dist/default/production\Proyecto1-Master.X.production.hex)
   400Eh - 4011h		(dist/default/production\Proyecto1-Master.X.production.hex)
  Unused ranges:
-  1Eh - 24Bh
+  1Eh - 21Fh
   1000h - 3FFFh
   4008h - 400Dh
 
@@ -27,7 +27,9 @@
 00000000 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000010 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- --
 ----------------------------------------------------------
-00000240 | -- -- -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1
+00000220 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000230 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000240 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000250 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000260 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000270 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1

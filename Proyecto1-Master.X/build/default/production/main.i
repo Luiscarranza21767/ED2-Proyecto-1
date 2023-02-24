@@ -2959,17 +2959,13 @@ void main(void) {
                 Escribir_dato(segundos, 14, 1);
                 Escribir_dato(minutos, 11, 1);
 
-
             }
-
-
-
-
-
-
+            Escribir_dato(0, 14, 2);
+            Escribir_dato(0, 11, 2);
         }
     }
 }
+
 void portsetup(){
     ANSEL = 0;
     ANSELH = 0;
@@ -2985,7 +2981,6 @@ void portsetup(){
     OPTION_REGbits.nRBPU = 0;
 
     I2C_Master_Init(100000);
-
 }
 
 void Escribir_dato(uint8_t dato, uint8_t posx, uint8_t posy){

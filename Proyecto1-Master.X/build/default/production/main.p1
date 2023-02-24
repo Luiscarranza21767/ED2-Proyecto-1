@@ -679,73 +679,79 @@ Version 4.0 HI-TECH Software Intermediate Code
 "159
 [; ;main.c: 159:                 Escribir_dato(minutos, 11, 1);
 [e ( _Escribir_dato (3 , , _minutos -> -> 11 `i `uc -> -> 1 `i `uc ]
-"162
-[; ;main.c: 162:             }
+"161
+[; ;main.c: 161:             }
 }
 [e :U 166 ]
 "155
 [; ;main.c: 155:             while(PORTBbits.RB2 & !((sec == segundos) & (min == minutos)) ){
 [e $ != & -> . . _PORTBbits 0 2 `i -> ! & == -> _sec `i -> _segundos `i == -> _min `i -> _minutos `i `i -> 0 `i 167  ]
 [e :U 168 ]
-"169
-[; ;main.c: 169:         }
+"162
+[; ;main.c: 162:             Escribir_dato(0, 14, 2);
+[e ( _Escribir_dato (3 , , -> -> 0 `i `uc -> -> 14 `i `uc -> -> 2 `i `uc ]
+"163
+[; ;main.c: 163:             Escribir_dato(0, 11, 2);
+[e ( _Escribir_dato (3 , , -> -> 0 `i `uc -> -> 11 `i `uc -> -> 2 `i `uc ]
+"164
+[; ;main.c: 164:         }
 }
 [e :U 143 ]
-"170
-[; ;main.c: 170:     }
+"165
+[; ;main.c: 165:     }
 }
 [e :U 140 ]
 [e $U 141  ]
 [e :U 142 ]
-"171
-[; ;main.c: 171: }
+"166
+[; ;main.c: 166: }
 [e :UE 139 ]
 }
-"172
-[; ;main.c: 172: void portsetup(){
+"168
+[; ;main.c: 168: void portsetup(){
 [v _portsetup `(v ~T0 @X0 1 ef ]
 {
 [e :U _portsetup ]
 [f ]
-"173
-[; ;main.c: 173:     ANSEL = 0;
+"169
+[; ;main.c: 169:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"174
-[; ;main.c: 174:     ANSELH = 0;
+"170
+[; ;main.c: 170:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"175
-[; ;main.c: 175:     TRISA = 0;
+"171
+[; ;main.c: 171:     TRISA = 0;
 [e = _TRISA -> -> 0 `i `uc ]
-"176
-[; ;main.c: 176:     PORTA = 0;
+"172
+[; ;main.c: 172:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"177
-[; ;main.c: 177:     TRISD = 0;
+"173
+[; ;main.c: 173:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"178
-[; ;main.c: 178:     PORTD = 0;
+"174
+[; ;main.c: 174:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"181
-[; ;main.c: 181:     TRISB = 0b11111100;
+"177
+[; ;main.c: 177:     TRISB = 0b11111100;
 [e = _TRISB -> -> 252 `i `uc ]
-"182
-[; ;main.c: 182:     PORTB = 0b11111100;
+"178
+[; ;main.c: 178:     PORTB = 0b11111100;
 [e = _PORTB -> -> 252 `i `uc ]
-"183
-[; ;main.c: 183:     WPUB = 0b11111100;
+"179
+[; ;main.c: 179:     WPUB = 0b11111100;
 [e = _WPUB -> -> 252 `i `uc ]
-"184
-[; ;main.c: 184:     OPTION_REGbits.nRBPU = 0;
+"180
+[; ;main.c: 180:     OPTION_REGbits.nRBPU = 0;
 [e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
-"186
-[; ;main.c: 186:     I2C_Master_Init(100000);
+"182
+[; ;main.c: 182:     I2C_Master_Init(100000);
 [e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
-"188
-[; ;main.c: 188: }
+"183
+[; ;main.c: 183: }
 [e :UE 169 ]
 }
-"190
-[; ;main.c: 190: void Escribir_dato(uint8_t dato, uint8_t posx, uint8_t posy){
+"185
+[; ;main.c: 185: void Escribir_dato(uint8_t dato, uint8_t posx, uint8_t posy){
 [v _Escribir_dato `(v ~T0 @X0 1 ef3`uc`uc`uc ]
 {
 [e :U _Escribir_dato ]
@@ -753,26 +759,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _posx `uc ~T0 @X0 1 r2 ]
 [v _posy `uc ~T0 @X0 1 r3 ]
 [f ]
-"191
-[; ;main.c: 191:     Lcd_Set_Cursor(posy, posx+1);
+"186
+[; ;main.c: 186:     Lcd_Set_Cursor(posy, posx+1);
 [e ( _Lcd_Set_Cursor (2 , -> _posy `uc -> + -> _posx `i -> 1 `i `uc ]
-"192
-[; ;main.c: 192:     unidad = inttochar(descomponer(0, dato));
+"187
+[; ;main.c: 187:     unidad = inttochar(descomponer(0, dato));
 [e = _unidad ( _inttochar (1 ( _descomponer (2 , -> 0 `i _dato ]
-"193
-[; ;main.c: 193:     Lcd_Write_Char(unidad);
+"188
+[; ;main.c: 188:     Lcd_Write_Char(unidad);
 [e ( _Lcd_Write_Char (1 _unidad ]
-"194
-[; ;main.c: 194:     Lcd_Set_Cursor(posy, posx);
+"189
+[; ;main.c: 189:     Lcd_Set_Cursor(posy, posx);
 [e ( _Lcd_Set_Cursor (2 , -> _posy `uc -> _posx `uc ]
-"195
-[; ;main.c: 195:     decena = inttochar(descomponer(1, dato));
+"190
+[; ;main.c: 190:     decena = inttochar(descomponer(1, dato));
 [e = _decena ( _inttochar (1 ( _descomponer (2 , -> 1 `i _dato ]
-"196
-[; ;main.c: 196:     Lcd_Write_Char(decena);
+"191
+[; ;main.c: 191:     Lcd_Write_Char(decena);
 [e ( _Lcd_Write_Char (1 _decena ]
-"197
-[; ;main.c: 197: }
+"192
+[; ;main.c: 192: }
 [e :UE 170 ]
 }
 [a 1C 83 58 32 32 58 0 ]
