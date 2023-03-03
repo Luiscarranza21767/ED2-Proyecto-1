@@ -46,19 +46,25 @@
 
 #define _XTAL_FREQ 8000000
 
-uint8_t lecADC;
 float conver;
 char valADC[3];
 char unidad;
 char decena;
 
+uint8_t tempint;
+uint8_t tempdec;
+float temp;
+
 uint8_t sec, segundos;
 uint8_t min, minutos;
 
 uint8_t modo;
+char buffer[3];
 
+unsigned DHT11_Join_Data(unsigned h, unsigned l);
 void portsetup(void);
 void Escribir_dato(uint8_t dato, uint8_t posx, uint8_t posy);
+void leer_temperatura(void);
 
 void main(void) {
     setupINTOSC(7);     //Oscilador a 8MHz
@@ -70,6 +76,9 @@ void main(void) {
     Lcd_Write_Char(':');
     Lcd_Set_Cursor(2,9);
     Lcd_Write_String("S:  :");
+    Lcd_Set_Cursor(2,1);
+    //Lcd_Write_String("T:  .  C");
+    Lcd_Write_String("T:    C");
     
 
     modo = 0;
@@ -80,6 +89,13 @@ void main(void) {
     
     while(1){
         PORTA = modo;
+        leer_temperatura();
+        
+        __delay_ms(20);
+        
+        
+
+        
         
         enviar_x(0, 0); // Enviar datos al RTC
         // Comunicación con DS3231
@@ -93,6 +109,7 @@ void main(void) {
             __delay_ms(20);
             while(PORTBbits.RB3){   // Sale del modo hasta que se presiona B3
                 __delay_ms(30);
+                leer_temperatura();
                 Escribir_dato(sec, 14, 1);
                 Escribir_dato(min, 11, 1);
                 // Cambio de modo
@@ -157,7 +174,7 @@ void main(void) {
                 minutos = leer_x(0x01);
                 Escribir_dato(segundos, 14, 1);
                 Escribir_dato(minutos, 11, 1);
-
+                leer_temperatura();
             }
             Escribir_dato(0, 14, 2);
             Escribir_dato(0, 11, 2);
@@ -190,3 +207,19 @@ void Escribir_dato(uint8_t dato, uint8_t posx, uint8_t posy){
     decena = inttochar(descomponer(1, dato));
     Lcd_Write_Char(decena);
 }
+
+unsigned DHT11_Join_Data(unsigned h, unsigned l)
+{
+    unsigned pow = 10;
+    while(l >= pow)
+        pow *= 10;
+    return h * pow + l;        
+}
+void leer_temperatura(){
+    I2C_Master_Start();     // Inicia la comunicación I2C
+    I2C_Master_Write(0x11);        //Leer posición
+    tempint = I2C_Master_Read(0);      //lee posicion de reloj
+    tempdec = I2C_Master_Read(0);
+    I2C_Master_Stop();             //Termina comunicaion I2C
+    Escribir_dato(tempint, 4, 2);
+}    

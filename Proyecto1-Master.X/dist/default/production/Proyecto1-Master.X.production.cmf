@@ -12,41 +12,43 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/default/production\Proyecto1-Master.X.production.o
-cinit CODE 0 7EB 7EB 15 2 1
+cinit CODE 0 7F5 7F5 B 2 1
 idloc IDLOC 5 2000 2000 4 2 1
-text1 CODE 0 4B6 4B6 5F 2 1
-text2 CODE 0 1E0 1E0 2D 2 1
-text3 CODE 0 2A5 2A5 38 2 1
-text4 CODE 0 57A 57A 66 2 1
-text5 CODE 0 2DD 2DD 41 2 1
-text6 CODE 0 17E 17E 1B 2 1
-text7 CODE 0 14F 14F 15 2 1
-text8 CODE 0 122 122 9 2 1
-text9 CODE 0 20D 20D 2E 2 1
-text10 CODE 0 270 270 35 2 1
-text11 CODE 0 12B 12B A 2 1
-text12 CODE 0 119 119 9 2 1
-text13 CODE 0 110 110 9 2 1
-text14 CODE 0 142 142 D 2 1
-text15 CODE 0 1BB 1BB 25 2 1
-text16 CODE 0 459 459 5D 2 1
-text17 CODE 0 135 135 D 2 1
-text18 CODE 0 364 364 4C 2 1
-text19 CODE 0 3B0 3B0 50 2 1
-text20 CODE 0 515 515 65 2 1
-text21 CODE 0 400 400 59 2 1
-text22 CODE 0 5E0 5E0 67 2 1
-text23 CODE 0 23B 23B 35 2 1
-text24 CODE 0 31E 31E 46 2 1
-text25 CODE 0 164 164 1A 2 1
-text26 CODE 0 199 199 22 2 1
-maintext CODE 0 647 647 1A4 2 1
+text1 CODE 0 567 567 46 2 1
+text2 CODE 0 327 327 22 2 1
+text3 CODE 0 39F 39F 31 2 1
+text4 CODE 0 608 608 5E 2 1
+text5 CODE 0 4E2 4E2 3F 2 1
+text6 CODE 0 2AC 2AC 19 2 1
+text7 CODE 0 26B 26B 11 2 1
+text8 CODE 0 243 243 5 2 1
+text9 CODE 0 436 436 33 2 1
+text10 CODE 0 349 349 25 2 1
+text11 CODE 0 521 521 46 2 1
+text12 CODE 0 469 469 3B 2 1
+text13 CODE 0 403 403 33 2 1
+text14 CODE 0 2C5 2C5 1F 2 1
+text15 CODE 0 2E4 2E4 21 2 1
+text16 CODE 0 4A4 4A4 3E 2 1
+text17 CODE 0 3D0 3D0 33 2 1
+text18 CODE 0 248 248 7 2 1
+text19 CODE 0 23E 23E 5 2 1
+text20 CODE 0 239 239 5 2 1
+text21 CODE 0 257 257 9 2 1
+text22 CODE 0 305 305 22 2 1
+text23 CODE 0 36E 36E 31 2 1
+text24 CODE 0 5AD 5AD 5B 2 1
+text25 CODE 0 260 260 B 2 1
+text26 CODE 0 294 294 18 2 1
+text27 CODE 0 27C 27C 18 2 1
+maintext CODE 0 666 666 18F 2 1
 cstackCOMMON COMMON 1 70 70 E 1 1
-cstackBANK0 BANK0 1 2F 2F B 1 1
-bssBANK0 BANK0 1 20 20 F 1 1
-strings STRING 0 3 3 C 2 1
+cstackBANK0 BANK0 1 37 37 B 1 1
+bssBANK0 BANK0 1 20 20 17 1 1
+strings STRING 0 3 3 14 2 1
+clrtext CODE 0 24F 24F 8 2 1
 config CONFIG 4 2007 2007 2 2 1
-$C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.o
+$C:\Users\Pablo\AppData\Local\Temp\xcAs14os.o
 idloc IDLOC 5 2000 2000 4 2 1
 end_init CODE 0 0 0 3 2 1
 config CONFIG 4 2007 2007 2 2 1
@@ -56,28 +58,28 @@ config CONFIG 4 2007 2007 2 2 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 3A-6F 1
+RAM 42-6F 1
 RAM A0-EF 1
 RAM 110-16F 1
 RAM 190-1EF 1
-BANK0 3A-6F 1
+BANK0 42-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
-CONST F-10F 2
+CONST 17-238 2
 CONST 800-1FFF 2
-ENTRY F-10F 2
+ENTRY 17-238 2
 ENTRY 800-1FFF 2
-CODE F-10F 2
+CODE 17-238 2
 CODE 800-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
 SFR3 180-18F 1
 EEDATA 2100-21FF 2
-STRCODE F-10F 2
+STRCODE 17-238 2
 STRCODE 800-1FFF 2
-STRING F-10F 2
+STRING 17-238 2
 STRING 800-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -93,440 +95,409 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Proyecto1-Master.X.production.o
-7EB cinit CODE >1329:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7EB cinit CODE >1332:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7EB cinit CODE >1370:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7EC cinit CODE >1371:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7ED cinit CODE >1372:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7EE cinit CODE >1373:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7EF cinit CODE >1374:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7F0 cinit CODE >1375:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7F1 cinit CODE >1376:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7F2 cinit CODE >1377:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7F3 cinit CODE >1378:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7F4 cinit CODE >1379:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7F5 cinit CODE >1380:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7F6 cinit CODE >1381:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7F7 cinit CODE >1382:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7F8 cinit CODE >1383:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7F9 cinit CODE >1384:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7FA cinit CODE >1385:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7FB cinit CODE >1386:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7FC cinit CODE >1392:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7FC cinit CODE >1394:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-7FD cinit CODE >1395:C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.s
-199 text26 CODE >13:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-19A text26 CODE >14:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-19E text26 CODE >15:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1A2 text26 CODE >16:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1A2 text26 CODE >17:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1A5 text26 CODE >19:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1A9 text26 CODE >20:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1AB text26 CODE >21:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1AB text26 CODE >22:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1AC text26 CODE >24:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1B0 text26 CODE >25:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1B2 text26 CODE >26:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1B2 text26 CODE >27:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1B3 text26 CODE >29:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1B7 text26 CODE >30:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1B9 text26 CODE >31:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1B9 text26 CODE >32:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1BA text26 CODE >33:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-164 text25 CODE >35:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-165 text25 CODE >36:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-168 text25 CODE >37:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-16E text25 CODE >38:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-171 text25 CODE >39:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-17A text25 CODE >40:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-17D text25 CODE >41:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-31E text24 CODE >48:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-31F text24 CODE >50:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-324 text24 CODE >51:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-327 text24 CODE >52:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-32A text24 CODE >52:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-32D text24 CODE >52:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-331 text24 CODE >53:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-334 text24 CODE >54:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-33A text24 CODE >55:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-340 text24 CODE >56:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-347 text24 CODE >57:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-34A text24 CODE >58:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-34D text24 CODE >58:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-350 text24 CODE >58:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-354 text24 CODE >59:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-357 text24 CODE >60:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-35D text24 CODE >61:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-363 text24 CODE >63:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-23B text23 CODE >83:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-23C text23 CODE >85:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-23F text23 CODE >86:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-242 text23 CODE >87:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-245 text23 CODE >88:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-248 text23 CODE >88:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-24B text23 CODE >88:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-253 text23 CODE >89:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-256 text23 CODE >90:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-25B text23 CODE >91:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-25E text23 CODE >92:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-264 text23 CODE >93:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-267 text23 CODE >94:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-26C text23 CODE >95:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-26F text23 CODE >96:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-5E0 text22 CODE >5:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-5E0 text22 CODE >13:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-5E1 text22 CODE >14:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-5E5 text22 CODE >15:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-5E8 text22 CODE >15:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-5EA text22 CODE >16:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-5EC text22 CODE >18:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-5F0 text22 CODE >19:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-5F3 text22 CODE >19:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-5F5 text22 CODE >20:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-5F9 text22 CODE >22:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-5FB text22 CODE >23:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-601 text22 CODE >24:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-603 text22 CODE >25:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-604 text22 CODE >26:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-605 text22 CODE >26:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-609 text22 CODE >26:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-60B text22 CODE >27:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-60F text22 CODE >25:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-613 text22 CODE >30:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-614 text22 CODE >30:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-618 text22 CODE >30:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-61A text22 CODE >31:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-61C text22 CODE >31:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-620 text22 CODE >31:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-624 text22 CODE >32:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-627 text22 CODE >32:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-62A text22 CODE >33:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-62B text22 CODE >35:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-62C text22 CODE >35:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-630 text22 CODE >35:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-632 text22 CODE >36:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-638 text22 CODE >38:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-63D text22 CODE >39:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-640 text22 CODE >39:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-642 text22 CODE >40:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-646 text22 CODE >41:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
-400 text21 CODE >5:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-400 text21 CODE >12:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-401 text21 CODE >13:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-405 text21 CODE >14:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-408 text21 CODE >14:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-40A text21 CODE >15:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-40C text21 CODE >17:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-410 text21 CODE >18:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-413 text21 CODE >18:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-415 text21 CODE >19:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-41B text21 CODE >20:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-41D text21 CODE >21:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-41E text21 CODE >22:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-41F text21 CODE >22:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-423 text21 CODE >22:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-425 text21 CODE >23:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-429 text21 CODE >21:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-42D text21 CODE >26:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-42F text21 CODE >26:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-433 text21 CODE >26:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-437 text21 CODE >27:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-43A text21 CODE >27:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-43D text21 CODE >28:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-43E text21 CODE >28:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-442 text21 CODE >28:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-444 text21 CODE >29:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-44A text21 CODE >31:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-44F text21 CODE >32:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-452 text21 CODE >32:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-454 text21 CODE >33:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-458 text21 CODE >34:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
-515 text20 CODE >45:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-515 text20 CODE >49:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-529 text20 CODE >50:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-53D text20 CODE >51:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-551 text20 CODE >52:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-558 text20 CODE >53:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-55A text20 CODE >55:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-560 text20 CODE >56:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-572 text20 CODE >58:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-578 text20 CODE >59:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-579 text20 CODE >62:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3B0 text19 CODE >12:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3B1 text19 CODE >13:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3B6 text19 CODE >14:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3B8 text19 CODE >16:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3BD text19 CODE >17:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3BF text19 CODE >19:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3C5 text19 CODE >20:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3C7 text19 CODE >22:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3CD text19 CODE >23:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3CF text19 CODE >25:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3D5 text19 CODE >26:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3D7 text19 CODE >28:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3DD text19 CODE >29:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3DF text19 CODE >31:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3E5 text19 CODE >32:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3E7 text19 CODE >34:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3ED text19 CODE >35:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3EF text19 CODE >37:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3F5 text19 CODE >38:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3F7 text19 CODE >40:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3FD text19 CODE >41:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3FF text19 CODE >42:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-3FF text19 CODE >43:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
-364 text18 CODE >185:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-367 text18 CODE >186:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-370 text18 CODE >187:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-384 text18 CODE >188:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-38A text18 CODE >189:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-394 text18 CODE >190:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-3A9 text18 CODE >191:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-3AF text18 CODE >192:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-135 text17 CODE >43:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-135 text17 CODE >44:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-13B text17 CODE >45:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-141 text17 CODE >46:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-459 text16 CODE >65:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-459 text16 CODE >66:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-45F text16 CODE >67:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-468 text16 CODE >68:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-46E text16 CODE >69:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-477 text16 CODE >70:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-47D text16 CODE >71:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-485 text16 CODE >72:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-48B text16 CODE >74:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-491 text16 CODE >75:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-497 text16 CODE >76:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-49D text16 CODE >77:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-4A3 text16 CODE >78:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-4A9 text16 CODE >79:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-4AF text16 CODE >80:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-4B5 text16 CODE >81:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1BB text15 CODE >98:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1BC text15 CODE >100:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1BF text15 CODE >101:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1CE text15 CODE >101:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1DB text15 CODE >101:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-1DF text15 CODE >102:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
-142 text14 CODE >32:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-142 text14 CODE >34:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-14E text14 CODE >35:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-110 text13 CODE >39:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-110 text13 CODE >41:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-115 text13 CODE >42:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-118 text13 CODE >43:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-119 text12 CODE >55:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-119 text12 CODE >57:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-11E text12 CODE >58:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-121 text12 CODE >59:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-12B text11 CODE >65:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-12B text11 CODE >67:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-130 text11 CODE >68:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-134 text11 CODE >69:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-270 text10 CODE >38:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-271 text10 CODE >39:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-276 text10 CODE >40:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-27F text10 CODE >41:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-287 text10 CODE >42:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-293 text10 CODE >43:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-29F text10 CODE >44:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-2A4 text10 CODE >45:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-20D text9 CODE >74:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-20D text9 CODE >77:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-212 text9 CODE >78:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-215 text9 CODE >79:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-21A text9 CODE >80:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-223 text9 CODE >81:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-228 text9 CODE >82:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-22E text9 CODE >83:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-231 text9 CODE >84:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-232 text9 CODE >85:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-235 text9 CODE >86:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-235 text9 CODE >87:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-236 text9 CODE >88:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-23A text9 CODE >89:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-122 text8 CODE >47:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-122 text8 CODE >49:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-127 text8 CODE >50:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-12A text8 CODE >51:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-14F text7 CODE >4:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8.c
-150 text7 CODE >6:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8.c
-151 text7 CODE >43:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8.c
-155 text7 CODE >44:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8.c
-159 text7 CODE >45:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8.c
-15B text7 CODE >46:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8.c
-15D text7 CODE >47:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8.c
-162 text7 CODE >50:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8.c
-163 text7 CODE >51:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8.c
-17E text6 CODE >5:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-17F text6 CODE >9:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-182 text6 CODE >10:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-185 text6 CODE >10:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-188 text6 CODE >10:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-18D text6 CODE >11:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-197 text6 CODE >12:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-198 text6 CODE >13:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-2DD text5 CODE >24:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-2DE text5 CODE >26:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-2E3 text5 CODE >27:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-2EC text5 CODE >28:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-2F8 text5 CODE >29:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-2FD text5 CODE >30:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-306 text5 CODE >31:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-310 text5 CODE >32:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-315 text5 CODE >33:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-31C text5 CODE >35:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-31D text5 CODE >36:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
-57A text4 CODE >5:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-57A text4 CODE >13:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-582 text4 CODE >14:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-586 text4 CODE >14:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-58A text4 CODE >15:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-58C text4 CODE >16:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-58D text4 CODE >17:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-58F text4 CODE >17:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-596 text4 CODE >18:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-59A text4 CODE >16:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-59E text4 CODE >21:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-5A0 text4 CODE >21:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-5A7 text4 CODE >22:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-5A9 text4 CODE >22:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-5AD text4 CODE >22:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-5B1 text4 CODE >22:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-5B5 text4 CODE >22:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-5B9 text4 CODE >23:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-5BC text4 CODE >23:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-5C0 text4 CODE >23:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-5C4 text4 CODE >23:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-5C7 text4 CODE >24:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-5C8 text4 CODE >26:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-5C9 text4 CODE >26:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-5CF text4 CODE >26:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-5D1 text4 CODE >27:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-5D7 text4 CODE >29:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-5DF text4 CODE >30:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
-2A5 text3 CODE >16:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-2A5 text3 CODE >18:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-2A9 text3 CODE >19:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-2AC text3 CODE >20:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-2B7 text3 CODE >20:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-2BD text3 CODE >20:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-2D9 text3 CODE >21:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-2DA text3 CODE >22:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-2DB text3 CODE >23:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-2DC text3 CODE >24:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
-1E0 text2 CODE >168:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-1E0 text2 CODE >169:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-1E3 text2 CODE >170:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-1E4 text2 CODE >171:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-1E7 text2 CODE >172:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-1EA text2 CODE >173:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-1ED text2 CODE >174:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-1F0 text2 CODE >177:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-1F4 text2 CODE >178:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-1F8 text2 CODE >179:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-1FC text2 CODE >180:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-1FD text2 CODE >182:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-20C text2 CODE >183:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-4B6 text1 CODE >10:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-4B7 text1 CODE >11:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-4BD text1 CODE >12:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-4C1 text1 CODE >13:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-4C1 text1 CODE >14:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-4C7 text1 CODE >15:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-4CD text1 CODE >16:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-4CD text1 CODE >17:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-4D3 text1 CODE >18:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-4D9 text1 CODE >19:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-4D9 text1 CODE >20:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-4DF text1 CODE >21:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-4E5 text1 CODE >22:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-4E5 text1 CODE >23:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-4EB text1 CODE >24:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-4F1 text1 CODE >25:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-4F1 text1 CODE >26:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-4F7 text1 CODE >27:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-4FD text1 CODE >28:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-4FD text1 CODE >29:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-502 text1 CODE >30:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-508 text1 CODE >31:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-508 text1 CODE >32:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-50D text1 CODE >33:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-511 text1 CODE >36:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-514 text1 CODE >37:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
-647 maintext CODE >63:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-647 maintext CODE >64:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-64D maintext CODE >65:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-652 maintext CODE >67:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-657 maintext CODE >68:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-65C maintext CODE >69:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-664 maintext CODE >70:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-66A maintext CODE >71:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-672 maintext CODE >72:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-678 maintext CODE >75:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-67B maintext CODE >76:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-67C maintext CODE >77:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-67D maintext CODE >79:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-684 maintext CODE >82:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-688 maintext CODE >84:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-68F maintext CODE >86:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-698 maintext CODE >87:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-6A2 maintext CODE >89:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-6AB maintext CODE >90:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-6B5 maintext CODE >92:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-6BB maintext CODE >93:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-6C5 maintext CODE >94:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-6C6 maintext CODE >95:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-6D1 maintext CODE >96:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-6DD maintext CODE >97:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-6E9 maintext CODE >99:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-6EF maintext CODE >100:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-6F9 maintext CODE >101:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-700 maintext CODE >102:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-704 maintext CODE >103:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-705 maintext CODE >105:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-706 maintext CODE >109:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-70A maintext CODE >110:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-714 maintext CODE >111:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-71B maintext CODE >112:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-71D maintext CODE >112:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-721 maintext CODE >113:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-725 maintext CODE >114:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-726 maintext CODE >116:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-728 maintext CODE >119:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-72D maintext CODE >120:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-72F maintext CODE >120:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-733 maintext CODE >121:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-737 maintext CODE >122:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-738 maintext CODE >124:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-739 maintext CODE >131:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-73D maintext CODE >132:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-747 maintext CODE >134:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-74E maintext CODE >135:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-753 maintext CODE >136:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-755 maintext CODE >137:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-756 maintext CODE >139:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-759 maintext CODE >142:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-75E maintext CODE >143:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-763 maintext CODE >144:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-765 maintext CODE >145:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-766 maintext CODE >147:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-769 maintext CODE >94:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-769 maintext CODE >150:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-76F maintext CODE >152:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+7F5 cinit CODE >1348:C:\Users\Pablo\AppData\Local\Temp\xcAs14os.s
+7F5 cinit CODE >1351:C:\Users\Pablo\AppData\Local\Temp\xcAs14os.s
+7F5 cinit CODE >1413:C:\Users\Pablo\AppData\Local\Temp\xcAs14os.s
+7F6 cinit CODE >1414:C:\Users\Pablo\AppData\Local\Temp\xcAs14os.s
+7F7 cinit CODE >1415:C:\Users\Pablo\AppData\Local\Temp\xcAs14os.s
+7F8 cinit CODE >1416:C:\Users\Pablo\AppData\Local\Temp\xcAs14os.s
+7F9 cinit CODE >1417:C:\Users\Pablo\AppData\Local\Temp\xcAs14os.s
+7FC cinit CODE >1423:C:\Users\Pablo\AppData\Local\Temp\xcAs14os.s
+7FC cinit CODE >1425:C:\Users\Pablo\AppData\Local\Temp\xcAs14os.s
+7FD cinit CODE >1426:C:\Users\Pablo\AppData\Local\Temp\xcAs14os.s
+27C text27 CODE >13:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+27D text27 CODE >14:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+27F text27 CODE >15:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+282 text27 CODE >16:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+282 text27 CODE >17:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+284 text27 CODE >19:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+286 text27 CODE >20:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+288 text27 CODE >21:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+288 text27 CODE >22:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+289 text27 CODE >24:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+28B text27 CODE >25:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+28D text27 CODE >26:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+28D text27 CODE >27:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+28E text27 CODE >29:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+290 text27 CODE >30:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+292 text27 CODE >31:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+292 text27 CODE >32:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+293 text27 CODE >33:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+294 text26 CODE >35:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+295 text26 CODE >36:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+298 text26 CODE >37:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+29E text26 CODE >38:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+29F text26 CODE >39:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+2A8 text26 CODE >40:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+2AB text26 CODE >41:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+260 text25 CODE >43:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+260 text25 CODE >44:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+266 text25 CODE >45:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+26A text25 CODE >46:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+5AD text24 CODE >65:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+5AD text24 CODE >66:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+5B3 text24 CODE >67:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+5BC text24 CODE >68:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+5C2 text24 CODE >69:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+5CB text24 CODE >70:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+5D1 text24 CODE >71:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+5D9 text24 CODE >72:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+5DF text24 CODE >74:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+5E5 text24 CODE >75:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+5EB text24 CODE >76:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+5F1 text24 CODE >77:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+5F7 text24 CODE >78:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+5FD text24 CODE >79:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+603 text24 CODE >80:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+607 text24 CODE >81:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+36E text23 CODE >83:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+36F text23 CODE >85:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+372 text23 CODE >86:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+375 text23 CODE >87:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+378 text23 CODE >88:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+37B text23 CODE >88:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+37E text23 CODE >88:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+386 text23 CODE >89:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+387 text23 CODE >90:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+38C text23 CODE >91:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+38F text23 CODE >92:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+395 text23 CODE >93:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+396 text23 CODE >94:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+39B text23 CODE >95:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+39E text23 CODE >96:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+305 text22 CODE >98:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+306 text22 CODE >100:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+308 text22 CODE >101:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+311 text22 CODE >101:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+322 text22 CODE >101:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+257 text21 CODE >32:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+257 text21 CODE >34:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+239 text20 CODE >39:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+239 text20 CODE >41:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+23C text20 CODE >42:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+23D text20 CODE >43:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+23E text19 CODE >55:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+23E text19 CODE >57:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+241 text19 CODE >58:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+242 text19 CODE >59:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+248 text18 CODE >65:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+248 text18 CODE >67:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+24B text18 CODE >68:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+24E text18 CODE >69:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+3D0 text17 CODE >38:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+3D1 text17 CODE >39:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+3D6 text17 CODE >40:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+3DF text17 CODE >41:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+3E7 text17 CODE >42:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+3F3 text17 CODE >43:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+3FF text17 CODE >44:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+402 text17 CODE >45:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+4A4 text16 CODE >48:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+4A5 text16 CODE >50:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+4A8 text16 CODE >51:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+4AB text16 CODE >52:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+4AE text16 CODE >52:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+4B1 text16 CODE >52:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+4B5 text16 CODE >53:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+4B8 text16 CODE >54:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+4BE text16 CODE >55:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+4C2 text16 CODE >56:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+4C7 text16 CODE >57:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+4CA text16 CODE >58:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+4CD text16 CODE >58:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+4D0 text16 CODE >58:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+4D4 text16 CODE >59:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+4D7 text16 CODE >60:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+4DD text16 CODE >61:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+4E1 text16 CODE >63:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\LCD.c
+2E4 text15 CODE >4:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbdiv.c
+2E5 text15 CODE >9:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbdiv.c
+2E6 text15 CODE >10:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbdiv.c
+2E9 text15 CODE >11:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbdiv.c
+2EB text15 CODE >12:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbdiv.c
+2ED text15 CODE >13:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbdiv.c
+2EF text15 CODE >14:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbdiv.c
+2F3 text15 CODE >12:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbdiv.c
+2F4 text15 CODE >17:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbdiv.c
+2F6 text15 CODE >18:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbdiv.c
+2F8 text15 CODE >18:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbdiv.c
+2FA text15 CODE >19:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbdiv.c
+2FC text15 CODE >20:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbdiv.c
+2FD text15 CODE >22:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbdiv.c
+2FF text15 CODE >23:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbdiv.c
+303 text15 CODE >25:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbdiv.c
+304 text15 CODE >26:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbdiv.c
+2C5 text14 CODE >4:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbmod.c
+2C6 text14 CODE >9:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbmod.c
+2C8 text14 CODE >10:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbmod.c
+2C9 text14 CODE >12:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbmod.c
+2CC text14 CODE >12:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbmod.c
+2CF text14 CODE >12:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbmod.c
+2D6 text14 CODE >13:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbmod.c
+2D8 text14 CODE >14:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbmod.c
+2DA text14 CODE >14:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbmod.c
+2DC text14 CODE >15:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbmod.c
+2DE text14 CODE >16:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbmod.c
+2E2 text14 CODE >17:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbmod.c
+2E3 text14 CODE >18:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbmod.c
+403 text13 CODE >45:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+403 text13 CODE >49:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+40C text13 CODE >50:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+415 text13 CODE >51:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+41E text13 CODE >52:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+423 text13 CODE >53:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+425 text13 CODE >55:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+429 text13 CODE >56:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+430 text13 CODE >58:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+434 text13 CODE >59:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+435 text13 CODE >62:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+469 text12 CODE >12:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+46A text12 CODE >13:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+46D text12 CODE >14:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+46F text12 CODE >16:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+472 text12 CODE >17:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+474 text12 CODE >19:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+478 text12 CODE >20:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+47A text12 CODE >22:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+47E text12 CODE >23:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+480 text12 CODE >25:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+484 text12 CODE >26:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+486 text12 CODE >28:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+48A text12 CODE >29:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+48C text12 CODE >31:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+490 text12 CODE >32:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+492 text12 CODE >34:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+496 text12 CODE >35:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+498 text12 CODE >37:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+49C text12 CODE >38:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+49E text12 CODE >40:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+4A2 text12 CODE >41:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
+521 text11 CODE >202:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+522 text11 CODE >203:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+52B text11 CODE >204:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+53F text11 CODE >205:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+545 text11 CODE >206:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+54D text11 CODE >207:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+562 text11 CODE >208:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+566 text11 CODE >209:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+349 text10 CODE >74:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+349 text10 CODE >77:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+34E text10 CODE >78:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+34F text10 CODE >79:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+354 text10 CODE >80:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+35C text10 CODE >81:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+361 text10 CODE >82:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+365 text10 CODE >83:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+366 text10 CODE >84:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+367 text10 CODE >85:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+368 text10 CODE >86:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+368 text10 CODE >87:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+369 text10 CODE >88:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+36D text10 CODE >89:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+436 text9 CODE >218:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+436 text9 CODE >219:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+43B text9 CODE >220:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+444 text9 CODE >221:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+44F text9 CODE >222:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+45A text9 CODE >223:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+45F text9 CODE >224:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+468 text9 CODE >225:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+243 text8 CODE >47:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+243 text8 CODE >49:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+246 text8 CODE >50:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+247 text8 CODE >51:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+26B text7 CODE >4:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8.c
+26C text7 CODE >6:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8.c
+26D text7 CODE >43:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8.c
+26F text7 CODE >44:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8.c
+273 text7 CODE >45:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8.c
+275 text7 CODE >46:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8.c
+277 text7 CODE >47:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8.c
+27A text7 CODE >50:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8.c
+27B text7 CODE >51:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8.c
+2AC text6 CODE >5:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+2AD text6 CODE >9:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+2B0 text6 CODE >10:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+2B3 text6 CODE >10:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+2B6 text6 CODE >10:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+2BB text6 CODE >11:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+2C3 text6 CODE >12:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+2C4 text6 CODE >13:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+4E2 text5 CODE >24:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+4E3 text5 CODE >26:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+4E8 text5 CODE >27:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+4F1 text5 CODE >28:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+4FD text5 CODE >29:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+502 text5 CODE >30:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+50B text5 CODE >31:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+515 text5 CODE >32:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+51A text5 CODE >33:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+51F text5 CODE >35:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+520 text5 CODE >36:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\DS3231.c
+608 text4 CODE >5:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+608 text4 CODE >13:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+610 text4 CODE >14:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+614 text4 CODE >14:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+616 text4 CODE >15:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+618 text4 CODE >16:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+61A text4 CODE >17:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+61C text4 CODE >17:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+623 text4 CODE >18:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+627 text4 CODE >16:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+628 text4 CODE >21:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+62A text4 CODE >21:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+631 text4 CODE >22:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+633 text4 CODE >22:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+637 text4 CODE >22:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+63B text4 CODE >22:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+63F text4 CODE >22:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+641 text4 CODE >23:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+644 text4 CODE >23:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+648 text4 CODE >23:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+64C text4 CODE >23:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+64F text4 CODE >24:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+650 text4 CODE >26:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+651 text4 CODE >26:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+657 text4 CODE >26:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+659 text4 CODE >27:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+65D text4 CODE >29:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+665 text4 CODE >30:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
+39F text3 CODE >16:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+39F text3 CODE >18:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+3A1 text3 CODE >19:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+3A3 text3 CODE >20:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+3AD text3 CODE >20:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+3B3 text3 CODE >20:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+3CC text3 CODE >21:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+3CD text3 CODE >22:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+3CE text3 CODE >23:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+3CF text3 CODE >24:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
+327 text2 CODE >185:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+327 text2 CODE >186:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+329 text2 CODE >187:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+32A text2 CODE >188:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+32C text2 CODE >189:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+32E text2 CODE >190:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+330 text2 CODE >191:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+332 text2 CODE >194:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+335 text2 CODE >195:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+338 text2 CODE >196:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+33B text2 CODE >197:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+33C text2 CODE >199:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+348 text2 CODE >200:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+567 text1 CODE >10:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+568 text1 CODE >11:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+56C text1 CODE >12:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+56F text1 CODE >13:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+56F text1 CODE >14:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+573 text1 CODE >15:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+578 text1 CODE >16:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+578 text1 CODE >17:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+57C text1 CODE >18:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+581 text1 CODE >19:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+581 text1 CODE >20:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+585 text1 CODE >21:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+58A text1 CODE >22:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+58A text1 CODE >23:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+58E text1 CODE >24:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+593 text1 CODE >25:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+593 text1 CODE >26:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+597 text1 CODE >27:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+59C text1 CODE >28:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+59C text1 CODE >29:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+59F text1 CODE >30:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+5A4 text1 CODE >31:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+5A4 text1 CODE >32:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+5A7 text1 CODE >33:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+5AA text1 CODE >36:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+5AC text1 CODE >37:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
+666 maintext CODE >69:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+666 maintext CODE >70:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+66C maintext CODE >71:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+671 maintext CODE >73:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+676 maintext CODE >74:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+67B maintext CODE >75:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+683 maintext CODE >76:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+689 maintext CODE >77:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+691 maintext CODE >78:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+697 maintext CODE >79:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+69F maintext CODE >81:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+6A5 maintext CODE >84:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+6A8 maintext CODE >85:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+6A9 maintext CODE >86:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+6AA maintext CODE >88:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+6B1 maintext CODE >91:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+6B4 maintext CODE >92:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+6B9 maintext CODE >94:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+6C3 maintext CODE >100:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+6CA maintext CODE >102:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+6D2 maintext CODE >103:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+6DC maintext CODE >105:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+6E4 maintext CODE >106:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+6EE maintext CODE >108:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+6F0 maintext CODE >109:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+6FA maintext CODE >110:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+6FE maintext CODE >111:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+709 maintext CODE >112:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+70E maintext CODE >113:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+718 maintext CODE >114:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+722 maintext CODE >116:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+724 maintext CODE >117:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+72E maintext CODE >118:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+733 maintext CODE >119:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+737 maintext CODE >120:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+738 maintext CODE >122:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+739 maintext CODE >126:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+73B maintext CODE >127:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+745 maintext CODE >128:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+74A maintext CODE >129:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+74C maintext CODE >129:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+74E maintext CODE >130:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+752 maintext CODE >131:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+753 maintext CODE >133:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+755 maintext CODE >136:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+758 maintext CODE >137:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+75A maintext CODE >137:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+75C maintext CODE >138:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+760 maintext CODE >139:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+761 maintext CODE >141:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+762 maintext CODE >148:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+764 maintext CODE >149:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+76E maintext CODE >151:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+773 maintext CODE >152:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
 776 maintext CODE >153:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-782 maintext CODE >154:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-78E maintext CODE >155:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-78F maintext CODE >156:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-798 maintext CODE >157:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-7A1 maintext CODE >158:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-7AB maintext CODE >159:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-7B7 maintext CODE >155:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-7BD maintext CODE >155:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-7C3 maintext CODE >155:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-7D1 maintext CODE >162:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
-7DB maintext CODE >163:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+778 maintext CODE >154:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+779 maintext CODE >156:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+77C maintext CODE >159:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+77F maintext CODE >160:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+782 maintext CODE >161:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+784 maintext CODE >162:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+785 maintext CODE >164:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+787 maintext CODE >110:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+788 maintext CODE >169:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+78F maintext CODE >170:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+79A maintext CODE >171:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+7A4 maintext CODE >172:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+7A5 maintext CODE >173:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+7AD maintext CODE >174:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+7B5 maintext CODE >175:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+7BF maintext CODE >176:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+7C9 maintext CODE >177:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+7CE maintext CODE >172:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+7D2 maintext CODE >172:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+7D6 maintext CODE >172:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+7E0 maintext CODE >179:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+7EA maintext CODE >180:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+24F clrtext CODE >1400:C:\Users\Pablo\AppData\Local\Temp\xcAs14os.s
+24F clrtext CODE >1401:C:\Users\Pablo\AppData\Local\Temp\xcAs14os.s
+250 clrtext CODE >1402:C:\Users\Pablo\AppData\Local\Temp\xcAs14os.s
+250 clrtext CODE >1403:C:\Users\Pablo\AppData\Local\Temp\xcAs14os.s
+251 clrtext CODE >1404:C:\Users\Pablo\AppData\Local\Temp\xcAs14os.s
+252 clrtext CODE >1405:C:\Users\Pablo\AppData\Local\Temp\xcAs14os.s
+253 clrtext CODE >1406:C:\Users\Pablo\AppData\Local\Temp\xcAs14os.s
+254 clrtext CODE >1407:C:\Users\Pablo\AppData\Local\Temp\xcAs14os.s
+255 clrtext CODE >1408:C:\Users\Pablo\AppData\Local\Temp\xcAs14os.s
+256 clrtext CODE >1409:C:\Users\Pablo\AppData\Local\Temp\xcAs14os.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -540,41 +511,40 @@ $dist/default/production\Proyecto1-Master.X.production.o
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
-___awdiv@counter 75 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 convertir@decena 76 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 __Hspace_0 800 0 ABS 0 - -
 __Hspace_1 7E 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
-_Lcd_Init 8B2 0 CODE 0 text16 dist/default/production\Proyecto1-Master.X.production.o
-_Lcd_Port 332 0 CODE 0 text26 dist/default/production\Proyecto1-Master.X.production.o
-I2C_Master_Init@c 2F 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_leer_temperatura 8D2 0 CODE 0 text9 dist/default/production\Proyecto1-Master.X.production.o
+_Lcd_Init B5A 0 CODE 0 text24 dist/default/production\Proyecto1-Master.X.production.o
+_Lcd_Port 4F8 0 CODE 0 text27 dist/default/production\Proyecto1-Master.X.production.o
+I2C_Master_Init@c 37 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto1-Master.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-__end_of_Lcd_Init 96C 0 CODE 0 text16 dist/default/production\Proyecto1-Master.X.production.o
-__end_of_Lcd_Port 376 0 CODE 0 text26 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_Lcd_Init C10 0 CODE 0 text24 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_Lcd_Port 528 0 CODE 0 text27 dist/default/production\Proyecto1-Master.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _WPUB 95 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.o
-_main C8E 0 CODE 0 maintext dist/default/production\Proyecto1-Master.X.production.o
-_modo 27 0 BANK0 1 bssBANK0 dist/default/production\Proyecto1-Master.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\Pablo\AppData\Local\Temp\xcAs14os.o
+_main CCC 0 CODE 0 maintext dist/default/production\Proyecto1-Master.X.production.o
+_modo 2E 0 BANK0 1 bssBANK0 dist/default/production\Proyecto1-Master.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
-_Lcd_Write_Char 476 0 CODE 0 text23 dist/default/production\Proyecto1-Master.X.production.o
-start 0 0 CODE 0 init C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.o
+_Lcd_Write_Char 6DC 0 CODE 0 text23 dist/default/production\Proyecto1-Master.X.production.o
+start 0 0 CODE 0 init C:\Users\Pablo\AppData\Local\Temp\xcAs14os.o
 Lcd_Port@a 70 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 Lcd_Write_Char@temp 72 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 _OPTION_REGbits 81 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
 convertir@valor 78 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-___awmod@sign 76 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 I2C_Master_Read@a 70 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.o
-_setupINTOSC 96C 0 CODE 0 text1 dist/default/production\Proyecto1-Master.X.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAs14os.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAs14os.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAs14os.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAs14os.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAs14os.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAs14os.o
+_setupINTOSC ACE 0 CODE 0 text1 dist/default/production\Proyecto1-Master.X.production.o
 ___bmul@multiplicand 70 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
@@ -582,42 +552,43 @@ __Hfunctab 0 0 ENTRY 0 functab -
 I2C_Master_Read@temp 74 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 setupINTOSC@IRCF 70 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 convertir@unidad 75 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
-___awdiv@sign 76 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_Lcd_Write_Char 4E0 0 CODE 0 text23 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_Lcd_Write_Char 73E 0 CODE 0 text23 dist/default/production\Proyecto1-Master.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
-___awdiv@dividend 72 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
-__end_of___bmul 2C8 0 CODE 0 text7 dist/default/production\Proyecto1-Master.X.production.o
+__end_of___bmul 4F8 0 CODE 0 text7 dist/default/production\Proyecto1-Master.X.production.o
+___lbdiv@dividend 72 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
+___lbmod@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 ___bmul@multiplier 73 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
-___awdiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
-__end_of___awdiv C8E 0 CODE 0 text22 dist/default/production\Proyecto1-Master.X.production.o
-__end_of___awmod 8B2 0 CODE 0 text21 dist/default/production\Proyecto1-Master.X.production.o
-__end_of___lldiv BC0 0 CODE 0 text4 dist/default/production\Proyecto1-Master.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.o
-___stacklo 0 0 ABS 0 - C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.o
-_descomponer A2A 0 CODE 0 text20 dist/default/production\Proyecto1-Master.X.production.o
+__end_of___lbdiv 60A 0 CODE 0 text15 dist/default/production\Proyecto1-Master.X.production.o
+__end_of___lbmod 5C8 0 CODE 0 text14 dist/default/production\Proyecto1-Master.X.production.o
+__end_of___lldiv CCC 0 CODE 0 text4 dist/default/production\Proyecto1-Master.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\Pablo\AppData\Local\Temp\xcAs14os.o
+___stacklo 0 0 ABS 0 - C:\Users\Pablo\AppData\Local\Temp\xcAs14os.o
+_descomponer 806 0 CODE 0 text13 dist/default/production\Proyecto1-Master.X.production.o
 Lcd_Set_Cursor@temp 79 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 ___lldiv@counter 7D 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
-start_initialization FD6 0 CODE 0 cinit dist/default/production\Proyecto1-Master.X.production.o
-descomponer@dec 31 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto1-Master.X.production.o
-descomponer@num 7B 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
-descomponer@pos 79 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
-descomponer@uni 30 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto1-Master.X.production.o
-__end_of_convertir 332 0 CODE 0 text6 dist/default/production\Proyecto1-Master.X.production.o
+start_initialization FEA 0 CODE 0 cinit dist/default/production\Proyecto1-Master.X.production.o
+descomponer@dec 7B 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
+descomponer@num 78 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
+descomponer@pos 76 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
+descomponer@uni 7A 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
+__end_of_convertir 58A 0 CODE 0 text6 dist/default/production\Proyecto1-Master.X.production.o
 leer_x@address 7B 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 _TRISCbits 87 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
 ___lldiv@dividend 74 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 inttochar@num 70 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
-__end_of_leer_x 63C 0 CODE 0 text5 dist/default/production\Proyecto1-Master.X.production.o
-_Lcd_Write_String 376 0 CODE 0 text15 dist/default/production\Proyecto1-Master.X.production.o
-__pcstackBANK0 2F 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_leer_x A42 0 CODE 0 text5 dist/default/production\Proyecto1-Master.X.production.o
+_Lcd_Write_String 60A 0 CODE 0 text22 dist/default/production\Proyecto1-Master.X.production.o
+clear_ram0 49E 0 CODE 0 clrtext dist/default/production\Proyecto1-Master.X.production.o
+__pcstackBANK0 37 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto1-Master.X.production.o
 _SSPADD 93 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
 _SSPBUF 13 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
 convertir@conversion 77 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
-_convertir 2FC 0 CODE 0 text6 dist/default/production\Proyecto1-Master.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.o
+_convertir 558 0 CODE 0 text6 dist/default/production\Proyecto1-Master.X.production.o
+___lbdiv@counter 73 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\Pablo\AppData\Local\Temp\xcAs14os.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -628,15 +599,15 @@ __Hstack 0 0 STACK 2 stack -
 __stringbase 10 0 STRING 0 strings dist/default/production\Proyecto1-Master.X.production.o
 I2C_Master_Write@d 70 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 __Hmaintext 0 0 ABS 0 maintext -
-_I2C_Master_RepeatedStart 244 0 CODE 0 text8 dist/default/production\Proyecto1-Master.X.production.o
-__end_of_portsetup 41A 0 CODE 0 text2 dist/default/production\Proyecto1-Master.X.production.o
+_I2C_Master_RepeatedStart 486 0 CODE 0 text8 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_portsetup 692 0 CODE 0 text2 dist/default/production\Proyecto1-Master.X.production.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 4012 0 CONFIG 4 config -
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
 __Lbank3 0 0 ABS 0 bank3 -
-__Lcinit FD6 0 CODE 0 cinit -
+__Lcinit FEA 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 5 idloc -
 __Lstack 0 0 STACK 2 stack -
 leer_x@valor 7C 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
@@ -650,7 +621,7 @@ __Hsfr1 0 0 ABS 0 sfr1 -
 __Hsfr2 0 0 ABS 0 sfr2 -
 __Hsfr3 0 0 ABS 0 sfr3 -
 __Htext 0 0 ABS 0 text -
-descomponer@cent 2F 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto1-Master.X.production.o
+descomponer@cent 79 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 __Labs1 0 0 ABS 0 abs1 -
 __Lcode 0 0 ABS 0 code -
 __Linit 0 0 CODE 0 init -
@@ -659,9 +630,9 @@ __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
-___bmul 29E 0 CODE 0 text7 dist/default/production\Proyecto1-Master.X.production.o
+___bmul 4D6 0 CODE 0 text7 dist/default/production\Proyecto1-Master.X.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
-_portsetup 3C0 0 CODE 0 text2 dist/default/production\Proyecto1-Master.X.production.o
+_portsetup 64E 0 CODE 0 text2 dist/default/production\Proyecto1-Master.X.production.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _RD3 43 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
 _RD4 44 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
@@ -671,109 +642,108 @@ _RD7 47 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
 __S0 800 0 ABS 0 - -
 __S1 7E 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_min 29 0 BANK0 1 bssBANK0 dist/default/production\Proyecto1-Master.X.production.o
-_sec 2B 0 BANK0 1 bssBANK0 dist/default/production\Proyecto1-Master.X.production.o
-_decena 2C 0 BANK0 1 bssBANK0 dist/default/production\Proyecto1-Master.X.production.o
-Escribir_dato@dato 34 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto1-Master.X.production.o
-Escribir_dato@posx 32 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto1-Master.X.production.o
-Escribir_dato@posy 33 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto1-Master.X.production.o
-_I2C_Master_Start 220 0 CODE 0 text13 dist/default/production\Proyecto1-Master.X.production.o
-_I2C_Master_Write 256 0 CODE 0 text11 dist/default/production\Proyecto1-Master.X.production.o
-__end_of_Lcd_Write_String 3C0 0 CODE 0 text15 dist/default/production\Proyecto1-Master.X.production.o
-__end_of_setupINTOSC A2A 0 CODE 0 text1 dist/default/production\Proyecto1-Master.X.production.o
-__end_of_Lcd_Clear 284 0 CODE 0 text17 dist/default/production\Proyecto1-Master.X.production.o
+_min 30 0 BANK0 1 bssBANK0 dist/default/production\Proyecto1-Master.X.production.o
+_sec 32 0 BANK0 1 bssBANK0 dist/default/production\Proyecto1-Master.X.production.o
+_decena 35 0 BANK0 1 bssBANK0 dist/default/production\Proyecto1-Master.X.production.o
+Escribir_dato@dato 37 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto1-Master.X.production.o
+Escribir_dato@posx 7C 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
+Escribir_dato@posy 7D 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
+_I2C_Master_Start 472 0 CODE 0 text20 dist/default/production\Proyecto1-Master.X.production.o
+_I2C_Master_Write 490 0 CODE 0 text18 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_Lcd_Write_String 64E 0 CODE 0 text22 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_setupINTOSC B5A 0 CODE 0 text1 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_Lcd_Clear 4D6 0 CODE 0 text25 dist/default/production\Proyecto1-Master.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
 ___lldiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 __stringtab 6 0 STRING 0 strings dist/default/production\Proyecto1-Master.X.production.o
 Lcd_Write_String@a 77 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 Lcd_Write_String@i 75 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Pablo\AppData\Local\Temp\xcAs5j0.o
-_enviar_x 4E0 0 CODE 0 text10 dist/default/production\Proyecto1-Master.X.production.o
-__end_of_Lcd_Cmd 2FC 0 CODE 0 text25 dist/default/production\Proyecto1-Master.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Pablo\AppData\Local\Temp\xcAs14os.o
+_enviar_x 7A0 0 CODE 0 text17 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_Lcd_Cmd 558 0 CODE 0 text26 dist/default/production\Proyecto1-Master.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
-_leer_x 5BA 0 CODE 0 text5 dist/default/production\Proyecto1-Master.X.production.o
-__end_of_enviar_x 54A 0 CODE 0 text10 dist/default/production\Proyecto1-Master.X.production.o
-___awmod@counter 75 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
-__ptext10 4E0 0 CODE 0 text10 dist/default/production\Proyecto1-Master.X.production.o
-__ptext11 256 0 CODE 0 text11 dist/default/production\Proyecto1-Master.X.production.o
-__ptext12 232 0 CODE 0 text12 dist/default/production\Proyecto1-Master.X.production.o
-__ptext13 220 0 CODE 0 text13 dist/default/production\Proyecto1-Master.X.production.o
-__ptext14 284 0 CODE 0 text14 dist/default/production\Proyecto1-Master.X.production.o
-__ptext15 376 0 CODE 0 text15 dist/default/production\Proyecto1-Master.X.production.o
-__ptext16 8B2 0 CODE 0 text16 dist/default/production\Proyecto1-Master.X.production.o
-__ptext17 26A 0 CODE 0 text17 dist/default/production\Proyecto1-Master.X.production.o
-__ptext18 6C8 0 CODE 0 text18 dist/default/production\Proyecto1-Master.X.production.o
-__ptext19 760 0 CODE 0 text19 dist/default/production\Proyecto1-Master.X.production.o
-__ptext20 A2A 0 CODE 0 text20 dist/default/production\Proyecto1-Master.X.production.o
-__ptext21 800 0 CODE 0 text21 dist/default/production\Proyecto1-Master.X.production.o
-__ptext22 BC0 0 CODE 0 text22 dist/default/production\Proyecto1-Master.X.production.o
-__ptext23 476 0 CODE 0 text23 dist/default/production\Proyecto1-Master.X.production.o
-__ptext24 63C 0 CODE 0 text24 dist/default/production\Proyecto1-Master.X.production.o
-__ptext25 2C8 0 CODE 0 text25 dist/default/production\Proyecto1-Master.X.production.o
-__ptext26 332 0 CODE 0 text26 dist/default/production\Proyecto1-Master.X.production.o
-_Lcd_Clear 26A 0 CODE 0 text17 dist/default/production\Proyecto1-Master.X.production.o
-___awdiv BC0 0 CODE 0 text22 dist/default/production\Proyecto1-Master.X.production.o
-___awmod 800 0 CODE 0 text21 dist/default/production\Proyecto1-Master.X.production.o
-_Lcd_Set_Cursor 63C 0 CODE 0 text24 dist/default/production\Proyecto1-Master.X.production.o
-___lldiv AF4 0 CODE 0 text4 dist/default/production\Proyecto1-Master.X.production.o
-__pmaintext C8E 0 CODE 0 maintext dist/default/production\Proyecto1-Master.X.production.o
+_leer_x 9C4 0 CODE 0 text5 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_enviar_x 806 0 CODE 0 text17 dist/default/production\Proyecto1-Master.X.production.o
+__ptext10 692 0 CODE 0 text10 dist/default/production\Proyecto1-Master.X.production.o
+__ptext11 A42 0 CODE 0 text11 dist/default/production\Proyecto1-Master.X.production.o
+__ptext12 8D2 0 CODE 0 text12 dist/default/production\Proyecto1-Master.X.production.o
+__ptext13 806 0 CODE 0 text13 dist/default/production\Proyecto1-Master.X.production.o
+__ptext14 58A 0 CODE 0 text14 dist/default/production\Proyecto1-Master.X.production.o
+__ptext15 5C8 0 CODE 0 text15 dist/default/production\Proyecto1-Master.X.production.o
+__ptext16 948 0 CODE 0 text16 dist/default/production\Proyecto1-Master.X.production.o
+__ptext17 7A0 0 CODE 0 text17 dist/default/production\Proyecto1-Master.X.production.o
+__ptext18 490 0 CODE 0 text18 dist/default/production\Proyecto1-Master.X.production.o
+__ptext19 47C 0 CODE 0 text19 dist/default/production\Proyecto1-Master.X.production.o
+__ptext20 472 0 CODE 0 text20 dist/default/production\Proyecto1-Master.X.production.o
+__ptext21 4AE 0 CODE 0 text21 dist/default/production\Proyecto1-Master.X.production.o
+__ptext22 60A 0 CODE 0 text22 dist/default/production\Proyecto1-Master.X.production.o
+__ptext23 6DC 0 CODE 0 text23 dist/default/production\Proyecto1-Master.X.production.o
+__ptext24 B5A 0 CODE 0 text24 dist/default/production\Proyecto1-Master.X.production.o
+__ptext25 4C0 0 CODE 0 text25 dist/default/production\Proyecto1-Master.X.production.o
+__ptext26 528 0 CODE 0 text26 dist/default/production\Proyecto1-Master.X.production.o
+__ptext27 4F8 0 CODE 0 text27 dist/default/production\Proyecto1-Master.X.production.o
+_Lcd_Clear 4C0 0 CODE 0 text25 dist/default/production\Proyecto1-Master.X.production.o
+_Lcd_Set_Cursor 948 0 CODE 0 text16 dist/default/production\Proyecto1-Master.X.production.o
+___lbdiv 5C8 0 CODE 0 text15 dist/default/production\Proyecto1-Master.X.production.o
+___lbmod 58A 0 CODE 0 text14 dist/default/production\Proyecto1-Master.X.production.o
+___lldiv C10 0 CODE 0 text4 dist/default/production\Proyecto1-Master.X.production.o
+__pmaintext CCC 0 CODE 0 maintext dist/default/production\Proyecto1-Master.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-_segundos 2A 0 BANK0 1 bssBANK0 dist/default/production\Proyecto1-Master.X.production.o
-_Escribir_dato 6C8 0 CODE 0 text18 dist/default/production\Proyecto1-Master.X.production.o
+___lbdiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
+_segundos 31 0 BANK0 1 bssBANK0 dist/default/production\Proyecto1-Master.X.production.o
+_Escribir_dato A42 0 CODE 0 text11 dist/default/production\Proyecto1-Master.X.production.o
 ?_I2C_Master_Read 70 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
-_unidad 2D 0 BANK0 1 bssBANK0 dist/default/production\Proyecto1-Master.X.production.o
-__end_of_I2C_Master_Init 5BA 0 CODE 0 text3 dist/default/production\Proyecto1-Master.X.production.o
-__end_of_I2C_Master_Read 476 0 CODE 0 text9 dist/default/production\Proyecto1-Master.X.production.o
-__end_of_I2C_Master_Stop 244 0 CODE 0 text12 dist/default/production\Proyecto1-Master.X.production.o
-__end_of_I2C_Master_Wait 29E 0 CODE 0 text14 dist/default/production\Proyecto1-Master.X.production.o
+_unidad 36 0 BANK0 1 bssBANK0 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_I2C_Master_Init 7A0 0 CODE 0 text3 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_I2C_Master_Read 6DC 0 CODE 0 text10 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_I2C_Master_Stop 486 0 CODE 0 text19 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_I2C_Master_Wait 4C0 0 CODE 0 text21 dist/default/production\Proyecto1-Master.X.production.o
 __end_of__stringtab 12 0 STRING 0 strings dist/default/production\Proyecto1-Master.X.production.o
-__end_of_descomponer AF4 0 CODE 0 text20 dist/default/production\Proyecto1-Master.X.production.o
-__end_of_I2C_Master_Start 232 0 CODE 0 text13 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_descomponer 86C 0 CODE 0 text13 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_I2C_Master_Start 47C 0 CODE 0 text20 dist/default/production\Proyecto1-Master.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-__end_of_I2C_Master_Write 26A 0 CODE 0 text11 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_I2C_Master_Write 49E 0 CODE 0 text18 dist/default/production\Proyecto1-Master.X.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __Lend_init 0 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 end_of_initialization FF8 0 CODE 0 cinit dist/default/production\Proyecto1-Master.X.production.o
-__end_of_Lcd_Set_Cursor 6C8 0 CODE 0 text24 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_Lcd_Set_Cursor 9C4 0 CODE 0 text16 dist/default/production\Proyecto1-Master.X.production.o
 __Hintentry 0 0 CODE 0 intentry -
 Lcd_Set_Cursor@a 76 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 Lcd_Set_Cursor@b 74 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 Lcd_Set_Cursor@y 78 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 Lcd_Set_Cursor@z 77 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 __Lstrings 0 0 ABS 0 strings -
-___awdiv@quotient 77 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
-?___awdiv 70 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
-?___awmod 70 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 ?___lldiv 70 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 __Hreset_vec 0 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-___awmod@dividend 72 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 _SSPCON2bits 91 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
-__ptext1 96C 0 CODE 0 text1 dist/default/production\Proyecto1-Master.X.production.o
-__ptext2 3C0 0 CODE 0 text2 dist/default/production\Proyecto1-Master.X.production.o
-__ptext3 54A 0 CODE 0 text3 dist/default/production\Proyecto1-Master.X.production.o
-__ptext4 AF4 0 CODE 0 text4 dist/default/production\Proyecto1-Master.X.production.o
-__ptext5 5BA 0 CODE 0 text5 dist/default/production\Proyecto1-Master.X.production.o
-__ptext6 2FC 0 CODE 0 text6 dist/default/production\Proyecto1-Master.X.production.o
-__ptext7 29E 0 CODE 0 text7 dist/default/production\Proyecto1-Master.X.production.o
-__ptext8 244 0 CODE 0 text8 dist/default/production\Proyecto1-Master.X.production.o
-__ptext9 41A 0 CODE 0 text9 dist/default/production\Proyecto1-Master.X.production.o
+__ptext1 ACE 0 CODE 0 text1 dist/default/production\Proyecto1-Master.X.production.o
+__ptext2 64E 0 CODE 0 text2 dist/default/production\Proyecto1-Master.X.production.o
+__ptext3 73E 0 CODE 0 text3 dist/default/production\Proyecto1-Master.X.production.o
+__ptext4 C10 0 CODE 0 text4 dist/default/production\Proyecto1-Master.X.production.o
+__ptext5 9C4 0 CODE 0 text5 dist/default/production\Proyecto1-Master.X.production.o
+__ptext6 558 0 CODE 0 text6 dist/default/production\Proyecto1-Master.X.production.o
+__ptext7 4D6 0 CODE 0 text7 dist/default/production\Proyecto1-Master.X.production.o
+__ptext8 486 0 CODE 0 text8 dist/default/production\Proyecto1-Master.X.production.o
+__ptext9 86C 0 CODE 0 text9 dist/default/production\Proyecto1-Master.X.production.o
+___lbdiv@quotient 74 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
+___lbmod@dividend 73 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-_I2C_Master_Init 54A 0 CODE 0 text3 dist/default/production\Proyecto1-Master.X.production.o
-_I2C_Master_Read 41A 0 CODE 0 text9 dist/default/production\Proyecto1-Master.X.production.o
-_I2C_Master_Stop 232 0 CODE 0 text12 dist/default/production\Proyecto1-Master.X.production.o
-_I2C_Master_Wait 284 0 CODE 0 text14 dist/default/production\Proyecto1-Master.X.production.o
+_I2C_Master_Init 73E 0 CODE 0 text3 dist/default/production\Proyecto1-Master.X.production.o
+_I2C_Master_Read 692 0 CODE 0 text10 dist/default/production\Proyecto1-Master.X.production.o
+_I2C_Master_Stop 47C 0 CODE 0 text19 dist/default/production\Proyecto1-Master.X.production.o
+_I2C_Master_Wait 4AE 0 CODE 0 text21 dist/default/production\Proyecto1-Master.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
-__end_of_I2C_Master_RepeatedStart 256 0 CODE 0 text8 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_I2C_Master_RepeatedStart 490 0 CODE 0 text8 dist/default/production\Proyecto1-Master.X.production.o
+_leer_temperatura 86C 0 CODE 0 text9 dist/default/production\Proyecto1-Master.X.production.o
 __end_of__initialization FF8 0 CODE 0 cinit dist/default/production\Proyecto1-Master.X.production.o
-___awmod@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
 Lcd_Cmd@a 73 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
@@ -782,30 +752,34 @@ __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Mas
 _SSPCON2 91 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
 __Hend_init 6 0 CODE 0 end_init -
-__end_of_main FD6 0 CODE 0 maintext dist/default/production\Proyecto1-Master.X.production.o
+___lbmod@rem 75 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
+__end_of_main FEA 0 CODE 0 maintext dist/default/production\Proyecto1-Master.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
-__end_of_inttochar 800 0 CODE 0 text19 dist/default/production\Proyecto1-Master.X.production.o
+__end_of_inttochar 948 0 CODE 0 text12 dist/default/production\Proyecto1-Master.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
 _PORTD 8 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
 _TRISA 85 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
 _TRISD 88 0 ABS 0 - dist/default/production\Proyecto1-Master.X.production.o
-_minutos 28 0 BANK0 1 bssBANK0 dist/default/production\Proyecto1-Master.X.production.o
-_main$175 39 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto1-Master.X.production.o
+_minutos 2F 0 BANK0 1 bssBANK0 dist/default/production\Proyecto1-Master.X.production.o
+_main$201 41 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto1-Master.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 enviar_x@val1 75 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 enviar_x@val2 72 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
-__end_of_Escribir_dato 760 0 CODE 0 text18 dist/default/production\Proyecto1-Master.X.production.o
-_Lcd_Cmd 2C8 0 CODE 0 text25 dist/default/production\Proyecto1-Master.X.production.o
-__initialization FD6 0 CODE 0 cinit dist/default/production\Proyecto1-Master.X.production.o
+__end_of_Escribir_dato ACE 0 CODE 0 text11 dist/default/production\Proyecto1-Master.X.production.o
+_Lcd_Cmd 528 0 CODE 0 text26 dist/default/production\Proyecto1-Master.X.production.o
+__initialization FEA 0 CODE 0 cinit dist/default/production\Proyecto1-Master.X.production.o
 ___bmul@product 72 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 __pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\Proyecto1-Master.X.production.o
 __pstrings 6 0 STRING 0 strings dist/default/production\Proyecto1-Master.X.production.o
-_inttochar 760 0 CODE 0 text19 dist/default/production\Proyecto1-Master.X.production.o
+_inttochar 8D2 0 CODE 0 text12 dist/default/production\Proyecto1-Master.X.production.o
 Lcd_Write_Char@a 74 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 Lcd_Write_Char@y 73 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
+_tempdec 33 0 BANK0 1 bssBANK0 dist/default/production\Proyecto1-Master.X.production.o
+_tempint 34 0 BANK0 1 bssBANK0 dist/default/production\Proyecto1-Master.X.production.o
+___lbmod@counter 74 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Master.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -831,38 +805,40 @@ Lcd_Write_Char@y 73 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1-Ma
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 7EB FD6 15 2
-text1 0 4B6 96C 5F 2
-text2 0 1E0 3C0 2D 2
-text3 0 2A5 54A 38 2
-text4 0 57A AF4 66 2
-text5 0 2DD 5BA 41 2
-text6 0 17E 2FC 1B 2
-text7 0 14F 29E 15 2
-text8 0 122 244 9 2
-text9 0 20D 41A 2E 2
-text10 0 270 4E0 35 2
-text11 0 12B 256 A 2
-text12 0 119 232 9 2
-text13 0 110 220 9 2
-text14 0 142 284 D 2
-text15 0 1BB 376 25 2
-text16 0 459 8B2 5D 2
-text17 0 135 26A D 2
-text18 0 364 6C8 4C 2
-text19 0 3B0 760 50 2
-text20 0 515 A2A 65 2
-text21 0 400 800 59 2
-text22 0 5E0 BC0 67 2
-text23 0 23B 476 35 2
-text24 0 31E 63C 46 2
-text25 0 164 2C8 1A 2
-text26 0 199 332 22 2
-maintext 0 647 C8E 1A4 2
+cinit 0 7F5 FEA B 2
+text1 0 567 ACE 46 2
+text2 0 327 64E 22 2
+text3 0 39F 73E 31 2
+text4 0 608 C10 5E 2
+text5 0 4E2 9C4 3F 2
+text6 0 2AC 558 19 2
+text7 0 26B 4D6 11 2
+text8 0 243 486 5 2
+text9 0 436 86C 33 2
+text10 0 349 692 25 2
+text11 0 521 A42 46 2
+text12 0 469 8D2 3B 2
+text13 0 403 806 33 2
+text14 0 2C5 58A 1F 2
+text15 0 2E4 5C8 21 2
+text16 0 4A4 948 3E 2
+text17 0 3D0 7A0 33 2
+text18 0 248 490 7 2
+text19 0 23E 47C 5 2
+text20 0 239 472 5 2
+text21 0 257 4AE 9 2
+text22 0 305 60A 22 2
+text23 0 36E 6DC 31 2
+text24 0 5AD B5A 5B 2
+text25 0 260 4C0 B 2
+text26 0 294 528 18 2
+text27 0 27C 4F8 18 2
+maintext 0 666 CCC 18F 2
 cstackCOMMON 1 70 70 E 1
 reset_vec 0 0 0 3 2
-bssBANK0 1 20 20 1A 1
-strings 0 3 6 C 2
+bssBANK0 1 20 20 22 1
+strings 0 3 6 14 2
+clrtext 0 24F 49E 8 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

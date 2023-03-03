@@ -2847,19 +2847,25 @@ uint8_t desconvertir(uint8_t valor);
 
 
 
-uint8_t lecADC;
 float conver;
 char valADC[3];
 char unidad;
 char decena;
 
+uint8_t tempint;
+uint8_t tempdec;
+float temp;
+
 uint8_t sec, segundos;
 uint8_t min, minutos;
 
 uint8_t modo;
+char buffer[3];
 
+unsigned DHT11_Join_Data(unsigned h, unsigned l);
 void portsetup(void);
 void Escribir_dato(uint8_t dato, uint8_t posx, uint8_t posy);
+void leer_temperatura(void);
 
 void main(void) {
     setupINTOSC(7);
@@ -2871,6 +2877,9 @@ void main(void) {
     Lcd_Write_Char(':');
     Lcd_Set_Cursor(2,9);
     Lcd_Write_String("S:  :");
+    Lcd_Set_Cursor(2,1);
+
+    Lcd_Write_String("T:    C");
 
 
     modo = 0;
@@ -2881,6 +2890,13 @@ void main(void) {
 
     while(1){
         PORTA = modo;
+        leer_temperatura();
+
+        _delay((unsigned long)((20)*(8000000/4000.0)));
+
+
+
+
 
         enviar_x(0, 0);
 
@@ -2894,6 +2910,7 @@ void main(void) {
             _delay((unsigned long)((20)*(8000000/4000.0)));
             while(PORTBbits.RB3){
                 _delay((unsigned long)((30)*(8000000/4000.0)));
+                leer_temperatura();
                 Escribir_dato(sec, 14, 1);
                 Escribir_dato(min, 11, 1);
 
@@ -2958,7 +2975,7 @@ void main(void) {
                 minutos = leer_x(0x01);
                 Escribir_dato(segundos, 14, 1);
                 Escribir_dato(minutos, 11, 1);
-
+                leer_temperatura();
             }
             Escribir_dato(0, 14, 2);
             Escribir_dato(0, 11, 2);
@@ -2990,4 +3007,20 @@ void Escribir_dato(uint8_t dato, uint8_t posx, uint8_t posy){
     Lcd_Set_Cursor(posy, posx);
     decena = inttochar(descomponer(1, dato));
     Lcd_Write_Char(decena);
+}
+
+unsigned DHT11_Join_Data(unsigned h, unsigned l)
+{
+    unsigned pow = 10;
+    while(l >= pow)
+        pow *= 10;
+    return h * pow + l;
+}
+void leer_temperatura(){
+    I2C_Master_Start();
+    I2C_Master_Write(0x11);
+    tempint = I2C_Master_Read(0);
+    tempdec = I2C_Master_Read(0);
+    I2C_Master_Stop();
+    Escribir_dato(tempint, 4, 2);
 }
