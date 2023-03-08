@@ -1,11 +1,11 @@
 /* Universidad del Valle de Guatemala
  IE3054 Electrónica Digital 2
- Autor: Luis Pablo Carranza
+ Autor: Luis Pablo Carranza y Miguel Chacón
  Compilador: XC8, MPLAB X IDE (v6.00)
  Proyecto: Proyecto 1 - Master
  Hardware PIC16F887
  Creado: 09/02/23
- Última Modificación: 15/02/23*/
+ Última Modificación: 7/03/23*/
 
 // CONFIG1
 #pragma config FOSC = INTRC_NOCLKOUT // Oscillator Selection bits (INTOSC 
@@ -46,6 +46,7 @@
 
 #define _XTAL_FREQ 8000000
 
+//Variables
 float conver;
 char valADC[3];
 char unidad;
@@ -70,7 +71,8 @@ void main(void) {
     
     setupINTOSC(7);     //Oscilador a 8MHz
     
-    portsetup();
+    portsetup();        //Configuración general de puertos
+    
     // Inicio y constantes del display
     Lcd_Init();
     Lcd_Clear();
@@ -85,7 +87,7 @@ void main(void) {
     modo = 0;
     sec = 0;
     min = 0;
-    // Valores iniciales de fecha y hora
+    // Valores iniciales de minutos y segundos
     enviar_x(0, 0);
     
     while(1){
@@ -100,14 +102,21 @@ void main(void) {
         min = leer_x(0x01);     // Leer minuto
         Escribir_dato(min, 11, 1);
         
-        
+        // Revisa si se desea abrir/cerrar la tapa
         if (!PORTBbits.RB1){
-            while(!PORTBbits.RB1);
             if (SERVO != 0){
                 SERVO = 0;
+                I2C_Master_Start();            //Incia comunicaión I2C
+                I2C_Master_Write(0xb0);        //Escoje dirección del slave 3
+                I2C_Master_Write(0);           //Envía un cero al esclavo
+                I2C_Master_Stop();
             }
             else if (SERVO == 0){
                 SERVO = 1;
+                I2C_Master_Start();            //Incia comunicaión I2C
+                I2C_Master_Write(0xb0);        //Escoje dirección del slave 3
+                I2C_Master_Write(1);           //Envía un 1 al esclavo
+                I2C_Master_Stop();  
             }
 
         }
@@ -174,18 +183,32 @@ void main(void) {
                     }
                 }  
             }
+            
+            //Resetea el RTC 
             enviar_x(0,0);
+            //Envía los valores en los que se debe detener el RTC a la LCD
             Escribir_dato(sec, 14, 2);
             Escribir_dato(min, 11, 2);
-            while(PORTBbits.RB2 & !((sec == segundos) & (min == minutos)) ){ //Mientras no se presione cancelar o no termine
+            
+            // Se asegura de que la tapa esté cerrada
+            I2C_Master_Start();            //Incia comunicaión I2C
+            I2C_Master_Write(0xb0);        //Escoje dirección del slave 3
+            I2C_Master_Write(0);       
+            I2C_Master_Stop();
+            SERVO = 0;
+            __delay_ms(500);
+            while(PORTBbits.RB3 & !((sec == segundos) & (min == minutos)) ){ //Mientras no se presione cancelar o no termine
+                //Mientras no coincidan los segundos o se cancele el proceso recibe los datos del RTC
                 segundos = leer_x(0x00);
                 minutos = leer_x(0x01);
                 Escribir_dato(segundos, 14, 1);
                 Escribir_dato(minutos, 11, 1);
+                //Lee la temperatura por si es necesario actualizar
                 leer_temperatura();
                 __delay_ms(10);
                 
             }
+            // Cuando termina resetea la información del display
             Escribir_dato(0, 14, 2);
             Escribir_dato(0, 11, 2);
         }

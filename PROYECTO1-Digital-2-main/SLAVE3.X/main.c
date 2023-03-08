@@ -37,35 +37,48 @@
 #include "setupADC.h"
 #include "oscilador.h"
 #include <xc.h>
-#include "dht11.h"                      // Libreria del sensor DHT11
 //*****************************************************************************
 // Definición de variables
 //*****************************************************************************
 //#define _XTAL_FREQ 500000
 #define _XTAL_FREQ 8000000
+#define valTMR0 100
 uint8_t dato;
-//uint8_t SERVO = 0;
+uint8_t SERVO = 0;
 
 //*****************************************************************************
 // Definición de funciones para que se puedan colocar después del main de lo 
 // contrario hay que colocarlos todas las funciones antes del main
 //*****************************************************************************
 void portsetup(void);
-void setup_portb(void);
+void setupPWM(void);                //setup del primer pwm
 void setupTMR0(void);
-void leer_temp(void);
     
-short dht_ok;                           // Flag de verificacion del bit de paridad
-uint8_t temperaturai;                      // Almacena la temperatura
 uint8_t z;
-uint8_t x;
-uint8_t check;
+
 
 //*****************************************************************************
 // Código de Interrupción 
 //*****************************************************************************
 
 void __interrupt() isr(void){
+    // Interrupción de TMR0
+    if(INTCONbits.T0IF){
+        INTCONbits.T0IF = 0;
+        TMR0 = valTMR0;                   // Valor inicial del TMR0
+        // Revisa el valor de la variable para colocar la posición del servo
+        if(SERVO ==0){
+            PORTDbits.RD1 = 1;
+            __delay_us(900);
+            PORTDbits.RD1 = 0;
+        }
+        else{
+            PORTDbits.RD1 = 1;
+            __delay_us(1800);
+            PORTDbits.RD1 = 0;
+        }
+    }
+    //Interrupción del I2C
     if(PIR1bits.SSPIF == 1){ 
 
         SSPCONbits.CKP = 0;
@@ -78,21 +91,17 @@ void __interrupt() isr(void){
         }
 
         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
-            //__delay_us(7);
             z = SSPBUF;                 // Lectura del SSBUF para limpiar el buffer y la bandera BF
-            //__delay_us(2);
-            PIR1bits.SSPIF = 0;         // Limpia bandera de interrupción recepción/transmisión SSP
+            //PIR1bits.SSPIF = 0;       // Limpia bandera de interrupción recepción/transmisión SSP
             SSPCONbits.CKP = 1;         // Habilita entrada de pulsos de reloj SCL
             while(!SSPSTATbits.BF);     // Esperar a que la recepción se complete
-            //z = SSPBUF;             // Guardar en el PORTD el valor del buffer de recepción
-            dato = SSPBUF;
+            SERVO = SSPBUF;
             __delay_us(250);
             
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
             SSPSTATbits.BF = 0;
-            leer_temp();
-            SSPBUF = temperaturai;
+            SSPBUF = z;
             SSPCONbits.CKP = 1;
             __delay_us(250);
             while(SSPSTATbits.BF);
@@ -110,15 +119,13 @@ void __interrupt() isr(void){
 void main(void) {
     setupINTOSC(7);
     portsetup();
+    setupTMR0();
     dato = 0;
     
     //*************************************************************************
     // Loop infinito
     //*************************************************************************
-    while(1){
-        __delay_ms(50);   
-
-    }
+    while(1){}
 }
 //*****************************************************************************
 // Función de Inicialización
@@ -127,26 +134,20 @@ void main(void) {
 void portsetup(){
     ANSEL = 0;
     ANSELH = 0;
-
-    //Configuración del TMR1
-    T1CONbits.TMR1CS = 0;           // Oscilador Interno
-    T1CONbits.T1CKPS = 0b01;        // Prescaler 2
-    T1CONbits.TMR1ON = 0;           // Apagamos el TMR1 
-    I2C_Slave_Init(0xa0); 
+    TRISDbits.TRISD1 = 0;
+    PORTDbits.RD1 = 0;
+    I2C_Slave_Init(0xb0); 
 }
 
-void leer_temp(void){
-    __delay_ms(800);
-    DHT11_Start();
-    check = DHT11_Response();
+void setupTMR0(void){
+    INTCONbits.GIE = 1;         // Habilitar interrupciones globales
+    INTCONbits.T0IE = 1;        // Deshabilitar interrupción de TMR0
+    INTCONbits.T0IF = 0;        // Desactivar la bandera de TMR0
     
-    if(check == 1){
-        x = DHT11_Read();
-        x = DHT11_Read();
-        temperaturai = DHT11_Read();
-        x = DHT11_Read();
-        x = DHT11_Read();
-        T1CONbits.TMR1ON = 0;       // Apagamos el TMR1
-    }
-       
+    OPTION_REGbits.T0CS = 0;    // Fosc/4
+    OPTION_REGbits.T0SE = 0;    // bit 4 TMR0 Source Edge Select bit 0 = low/high 1 = high/low
+    OPTION_REGbits.PSA = 0;     // Prescaler para TMR0
+    OPTION_REGbits.PS = 0b111;  // Prescaler 1:256
+    TMR0 = valTMR0;                 // Valor inicial del TMR0
 }
+

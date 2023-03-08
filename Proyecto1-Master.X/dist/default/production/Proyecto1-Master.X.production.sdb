@@ -57,13 +57,13 @@
 [v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
 "98
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
-"69 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+"70 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"195
+"218
 [v _portsetup portsetup `(v  1 e 1 0 ]
-"210
+"233
 [v _Escribir_dato Escribir_dato `(v  1 e 1 0 ]
-"219
+"242
 [v _leer_temperatura leer_temperatura `(v  1 e 1 0 ]
 "10 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
 [v _setupINTOSC setupINTOSC `(v  1 e 1 0 ]
@@ -99,7 +99,7 @@
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "851
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
-[s S111 . 1 `uc 1 PS 1 0 :3:0 
+[s S124 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -107,12 +107,12 @@
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1367
-[s S118 . 1 `uc 1 PS0 1 0 :1:0 
+[s S131 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S122 . 1 `S111 1 . 1 0 `S118 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES122  1 e 1 @129 ]
+[u S135 . 1 `S124 1 . 1 0 `S131 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES135  1 e 1 @129 ]
 "1479
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 [s S239 . 1 `uc 1 TRISC0 1 0 :1:0 
@@ -177,26 +177,26 @@
 [v _RD6 RD6 `VEb  1 e 0 @70 ]
 "4207
 [v _RD7 RD7 `VEb  1 e 0 @71 ]
-"51 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+"52 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
 [v _unidad unidad `uc  1 e 1 0 ]
-"52
+"53
 [v _decena decena `uc  1 e 1 0 ]
-"54
+"55
 [v _tempint tempint `uc  1 e 1 0 ]
-"56
+"57
 [v _sec sec `uc  1 e 1 0 ]
 [v _segundos segundos `uc  1 e 1 0 ]
-"57
+"58
 [v _min min `uc  1 e 1 0 ]
 [v _minutos minutos `uc  1 e 1 0 ]
-"59
+"60
 [v _modo modo `uc  1 e 1 0 ]
-"61
+"62
 [v _SERVO SERVO `uc  1 e 1 0 ]
-"69
+"70
 [v _main main `(v  1 e 1 0 ]
 {
-"193
+"216
 } 0
 "10 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
 [v _setupINTOSC setupINTOSC `(v  1 e 1 0 ]
@@ -206,10 +206,10 @@
 [v setupINTOSC@IRCF IRCF `uc  1 a 1 0 ]
 "37
 } 0
-"195 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+"218 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
 [v _portsetup portsetup `(v  1 e 1 0 ]
 {
-"208
+"231
 } 0
 "16 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
 [v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
@@ -275,10 +275,10 @@
 {
 "51
 } 0
-"219 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+"242 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
 [v _leer_temperatura leer_temperatura `(v  1 e 1 0 ]
 {
-"227
+"250
 } 0
 "74 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
 [v _I2C_Master_Read I2C_Master_Read `(us  1 e 2 0 ]
@@ -289,7 +289,7 @@
 [v I2C_Master_Read@a a `us  1 p 2 0 ]
 "89
 } 0
-"210 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+"233 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
 [v _Escribir_dato Escribir_dato `(v  1 e 1 0 ]
 {
 [v Escribir_dato@dato dato `uc  1 a 1 wreg ]
@@ -297,7 +297,7 @@
 [v Escribir_dato@posx posx `uc  1 p 1 12 ]
 [v Escribir_dato@posy posy `uc  1 p 1 13 ]
 [v Escribir_dato@dato dato `uc  1 a 1 0 ]
-"217
+"240
 } 0
 "12 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
 [v _inttochar inttochar `(uc  1 e 1 0 ]
