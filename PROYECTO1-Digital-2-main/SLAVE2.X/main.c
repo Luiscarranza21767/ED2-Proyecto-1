@@ -36,9 +36,8 @@
 //*****************************************************************************
 //#define _XTAL_FREQ 500000
 #define _XTAL_FREQ 8000000
-uint8_t z;
 uint8_t dato;
-uint8_t SERVO = 0;
+//uint8_t SERVO = 0;
 
 //*****************************************************************************
 // Definición de funciones para que se puedan colocar después del main de lo 
@@ -48,48 +47,34 @@ void portsetup(void);
 void setupPWM(void);                //setup del primer pwm
 void setup_portb(void);
 void setupTMR0(void);
-
+void readTemp(void);
+    
 short dht_ok;                           // Flag de verificacion del bit de paridad
 uint8_t temperaturai;                      // Almacena la temperatura
-uint8_t temperaturad;                          // Almacena la humedad
 uint8_t z;
-
+uint8_t x;
+uint8_t check;
 
 //*****************************************************************************
 // Código de Interrupción 
 //*****************************************************************************
 
 void __interrupt() isr(void){
-    if(INTCONbits.T0IF){
-        dht_ok = DHT11_Read_Data(&temperaturai, &temperaturad);
-        INTCONbits.T0IF = 0;
-        TMR0 = 100;                   // Valor inicial del TMR0
-        if (SERVO == 0){
-            PORTDbits.RD1 = 1;
-            __delay_us(990);
-            PORTDbits.RD1 = 0;
-        }
-        else {
-            PORTDbits.RD1 = 1;
-            __delay_us(1500);
-            PORTDbits.RD1 = 0;
-        }
-    }
-    
-    if (RBIF == 1){
-        if (PORTBbits.RB7 == 0)
-        {
-            while(!PORTBbits.RB7);
-            if (SERVO != 0){
-                SERVO = 0;
-            }
-            else if (SERVO == 0){
-                SERVO = 1;
-            }
-            INTCONbits.RBIF = 0;
-        }
-    }
-    
+//    if(INTCONbits.T0IF){
+//        
+//        INTCONbits.T0IF = 0;
+//        TMR0 = 100;                   // Valor inicial del TMR0
+//        if (SERVO == 0){
+//            PORTDbits.RD1 = 1;
+//            __delay_us(990);
+//            PORTDbits.RD1 = 0;
+//        }
+//        else {
+//            PORTDbits.RD1 = 1;
+//            __delay_us(1500);
+//            PORTDbits.RD1 = 0;
+//        }
+//    }
     if(PIR1bits.SSPIF == 1){ 
 
         SSPCONbits.CKP = 0;
@@ -110,13 +95,14 @@ void __interrupt() isr(void){
             while(!SSPSTATbits.BF);     // Esperar a que la recepción se complete
             //z = SSPBUF;             // Guardar en el PORTD el valor del buffer de recepción
             dato = SSPBUF;
+            //SSPCONbits.CKP = 1;
             __delay_us(250);
             
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
-            BF = 0;
+            SSPSTATbits.BF = 0;
+            readTemp();
             SSPBUF = temperaturai;
-            SSPBUF = temperaturad;
             SSPCONbits.CKP = 1;
             __delay_us(250);
             while(SSPSTATbits.BF);
@@ -134,21 +120,19 @@ void __interrupt() isr(void){
 void main(void) {
     setupINTOSC(7);
     portsetup();
-    setup_portb();
-    //setupPWM();
-    setupTMR0();        // Configura el TMR0
+    //setup_portb();
+    //setupTMR0();        // Configura el TMR0
     dato = 0;
+    
     //*************************************************************************
     // Loop infinito
     //*************************************************************************
     while(1){
-        //CCPR1L = SERVO;  //asigno el valor para el PWM
-        PORTA = temperaturai;
-        __delay_ms(200);   
-        
-        
+        //PORTA = temperaturai;
+        //dht_ok = DHT11_Read_Data(&temperaturai, &temperaturad);
+        __delay_ms(50);   
+
     }
-    return;
 }
 //*****************************************************************************
 // Función de Inicialización
@@ -157,42 +141,26 @@ void main(void) {
 void portsetup(){
     ANSEL = 0;
     ANSELH = 0;
-    TRISA = 0;
-    PORTA = 0;
-    TRISDbits.TRISD1 = 0;
-    PORTDbits.RD0 = 0;
 
-    INTCONbits.GIE = 1;         // Habilitamos interrupciones
-    INTCONbits.PEIE = 1;        // Habilitamos interrupciones PEIE    
-    I2C_Slave_Init(0x10); 
+    //Configuración del TMR1
+    T1CONbits.TMR1CS = 0;           // Oscilador Interno
+    T1CONbits.T1CKPS = 0b01;        // Prescaler 2
+    T1CONbits.TMR1ON = 0;           // Apagamos el TMR1
+    //INTCONbits.GIE = 1;         // Habilitamos interrupciones
+    //dht_ok = DHT11_Read_Data(&temperaturai, &temperaturad);    
+    I2C_Slave_Init(0xa0); 
 }
 
 void setup_portb(void){
-    TRISB = 0b10000000;
-    INTCONbits.RBIE = 1;    // Habilita interrupción del puerto B
-    INTCONbits.RBIF = 0;    // Apaga la bandera de interrupción del puerto B
-    IOCB = 0b10000000;      // Habilita la interrupción en cambio (IoC)
-    WPUB = 0b10000000;      // Habilita el Weak Pull-Up en el puerto B
+    TRISB = 0b11100000;
+    //INTCONbits.RBIE = 1;    // Habilita interrupción del puerto B
+    //INTCONbits.RBIF = 0;    // Apaga la bandera de interrupción del puerto B
+    //IOCB = 0b11100000;      // Habilita la interrupción en cambio (IoC)
+    WPUB = 0b11100000;      // Habilita el Weak Pull-Up en el puerto B
     OPTION_REGbits.nRBPU = 0;   // Deshabilita el bit de RBPU
 }
 
-void setupPWM(void){
-    // Paso 1
-    TRISCbits.TRISC2 = 1; 
-    // Paso 2
-    PR2 = 155;      // Periodo de 20mS  
-    // Paso 3
-    CCP1CON = 0b00001100;        // P1A como PWM 
-   // Paso 4
-    CCPR1L = SERVO;        // CCPR1L   
-    // Paso 5
-    TMR2IF = 0;
-    T2CONbits.T2CKPS = 0b11;      // Prescaler de 1:16
-    TMR2ON = 1;         // Encender timer 2 
-    // Paso 6
-    while(!TMR2IF);
-    TRISCbits.TRISC2 = 0;// Habilitamos la salida del PWM   
-}
+
 
 void setupTMR0(void){
     INTCONbits.GIE = 1;         // Habilitar interrupciones globales
@@ -203,4 +171,20 @@ void setupTMR0(void){
     OPTION_REGbits.PSA = 0;     // Prescaler para TMR0
     OPTION_REGbits.PS = 0b111;  // Prescaler 1:16
     TMR0 = 100;                   // Valor inicial del TMR0
+}
+
+void readTemp(void){
+    __delay_ms(800);
+    DHT11_Start();
+    check = DHT11_Response();
+    
+    if(check == 1){
+        x = DHT11_Read();
+        x = DHT11_Read();
+        temperaturai = DHT11_Read();
+        x = DHT11_Read();
+        x = DHT11_Read();
+        T1CONbits.TMR1ON = 0;       // Apagamos el TMR1
+    }
+       
 }

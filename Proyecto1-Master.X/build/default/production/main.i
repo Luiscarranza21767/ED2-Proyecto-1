@@ -2852,23 +2852,25 @@ char valADC[3];
 char unidad;
 char decena;
 
-uint8_t tempint;
-uint8_t tempdec;
-float temp;
+uint8_t tempint = 0;
 
 uint8_t sec, segundos;
 uint8_t min, minutos;
 
 uint8_t modo;
 char buffer[3];
+uint8_t SERVO = 0;
 
-unsigned DHT11_Join_Data(unsigned h, unsigned l);
 void portsetup(void);
 void Escribir_dato(uint8_t dato, uint8_t posx, uint8_t posy);
 void leer_temperatura(void);
 
+
+
 void main(void) {
+
     setupINTOSC(7);
+
     portsetup();
 
     Lcd_Init();
@@ -2878,7 +2880,6 @@ void main(void) {
     Lcd_Set_Cursor(2,9);
     Lcd_Write_String("S:  :");
     Lcd_Set_Cursor(2,1);
-
     Lcd_Write_String("T:    C");
 
 
@@ -2889,14 +2890,8 @@ void main(void) {
     enviar_x(0, 0);
 
     while(1){
-        PORTA = modo;
+
         leer_temperatura();
-
-        _delay((unsigned long)((20)*(8000000/4000.0)));
-
-
-
-
 
         enviar_x(0, 0);
 
@@ -2906,16 +2901,29 @@ void main(void) {
         min = leer_x(0x01);
         Escribir_dato(min, 11, 1);
 
+
+        if (!PORTBbits.RB1){
+            while(!PORTBbits.RB1);
+            if (SERVO != 0){
+                SERVO = 0;
+            }
+            else if (SERVO == 0){
+                SERVO = 1;
+            }
+
+        }
+
         if(!PORTBbits.RB4){
-            _delay((unsigned long)((20)*(8000000/4000.0)));
+
             while(PORTBbits.RB3){
-                _delay((unsigned long)((30)*(8000000/4000.0)));
+
                 leer_temperatura();
+
                 Escribir_dato(sec, 14, 1);
                 Escribir_dato(min, 11, 1);
 
                 if(PORTBbits.RB7 == 0){
-                    _delay((unsigned long)((20)*(8000000/4000.0)));
+
                     if (modo < 1){
                         modo += 1;
                     }
@@ -2925,7 +2933,7 @@ void main(void) {
                 }
 
                 if(PORTBbits.RB6 == 0){
-                    _delay((unsigned long)((50)*(8000000/4000.0)));
+
                     if (modo == 0){
                         if (sec<59){
                             sec ++;
@@ -2947,7 +2955,7 @@ void main(void) {
 
 
                 if(PORTBbits.RB5 == 0){
-                    _delay((unsigned long)((50)*(8000000/4000.0)));
+
 
                     if (modo == 0){
                         if (sec > 0){
@@ -2976,6 +2984,8 @@ void main(void) {
                 Escribir_dato(segundos, 14, 1);
                 Escribir_dato(minutos, 11, 1);
                 leer_temperatura();
+                _delay((unsigned long)((10)*(8000000/4000.0)));
+
             }
             Escribir_dato(0, 14, 2);
             Escribir_dato(0, 11, 2);
@@ -2986,17 +2996,15 @@ void main(void) {
 void portsetup(){
     ANSEL = 0;
     ANSELH = 0;
-    TRISA = 0;
-    PORTA = 0;
     TRISD = 0;
     PORTD = 0;
 
 
-    TRISB = 0b11111100;
-    PORTB = 0b11111100;
-    WPUB = 0b11111100;
+    TRISB = 0b11111110;
+    PORTB = 0b11111110;
+    WPUB = 0b11111110;
     OPTION_REGbits.nRBPU = 0;
-
+    _delay((unsigned long)((1000)*(8000000/4000.0)));
     I2C_Master_Init(100000);
 }
 
@@ -3009,18 +3017,12 @@ void Escribir_dato(uint8_t dato, uint8_t posx, uint8_t posy){
     Lcd_Write_Char(decena);
 }
 
-unsigned DHT11_Join_Data(unsigned h, unsigned l)
-{
-    unsigned pow = 10;
-    while(l >= pow)
-        pow *= 10;
-    return h * pow + l;
-}
 void leer_temperatura(){
     I2C_Master_Start();
-    I2C_Master_Write(0x11);
+    I2C_Master_Write(0xa1);
     tempint = I2C_Master_Read(0);
-    tempdec = I2C_Master_Read(0);
+
     I2C_Master_Stop();
+    _delay((unsigned long)((30)*(8000000/4000.0)));
     Escribir_dato(tempint, 4, 2);
 }

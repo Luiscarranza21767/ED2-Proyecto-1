@@ -51,23 +51,25 @@ char valADC[3];
 char unidad;
 char decena;
 
-uint8_t tempint;
-uint8_t tempdec;
-float temp;
+uint8_t tempint = 0;
 
 uint8_t sec, segundos;
 uint8_t min, minutos;
 
 uint8_t modo;
 char buffer[3];
+uint8_t SERVO = 0;
 
-unsigned DHT11_Join_Data(unsigned h, unsigned l);
 void portsetup(void);
 void Escribir_dato(uint8_t dato, uint8_t posx, uint8_t posy);
 void leer_temperatura(void);
 
+
+
 void main(void) {
+    
     setupINTOSC(7);     //Oscilador a 8MHz
+    
     portsetup();
     // Inicio y constantes del display
     Lcd_Init();
@@ -77,7 +79,6 @@ void main(void) {
     Lcd_Set_Cursor(2,9);
     Lcd_Write_String("S:  :");
     Lcd_Set_Cursor(2,1);
-    //Lcd_Write_String("T:  .  C");
     Lcd_Write_String("T:    C");
     
 
@@ -88,14 +89,8 @@ void main(void) {
     enviar_x(0, 0);
     
     while(1){
-        PORTA = modo;
+        
         leer_temperatura();
-        
-        __delay_ms(20);
-        
-        
-
-        
         
         enviar_x(0, 0); // Enviar datos al RTC
         // Comunicación con DS3231
@@ -104,17 +99,30 @@ void main(void) {
         
         min = leer_x(0x01);     // Leer minuto
         Escribir_dato(min, 11, 1);
-              
+        
+        
+        if (!PORTBbits.RB1){
+            while(!PORTBbits.RB1);
+            if (SERVO != 0){
+                SERVO = 0;
+            }
+            else if (SERVO == 0){
+                SERVO = 1;
+            }
+
+        }
+        
         if(!PORTBbits.RB4){     // Entrar al modo de configuración de tiempo
-            __delay_ms(20);
+            //__delay_ms(5);
             while(PORTBbits.RB3){   // Sale del modo hasta que se presiona B3
-                __delay_ms(30);
+                //__delay_ms(5);
                 leer_temperatura();
+                
                 Escribir_dato(sec, 14, 1);
                 Escribir_dato(min, 11, 1);
                 // Cambio de modo
                 if(PORTBbits.RB7 == 0){ // Botón que cambia entre minutos y segundos
-                    __delay_ms(20);
+                    //__delay_ms(5);
                     if (modo < 1){
                         modo += 1;
                     }
@@ -124,7 +132,7 @@ void main(void) {
                 }
                 // Incrementos
                 if(PORTBbits.RB6 == 0){ // Si se presiona incrementa
-                    __delay_ms(50);
+                    //__delay_ms(5);
                     if (modo == 0){
                         if (sec<59){
                             sec ++;   
@@ -146,7 +154,7 @@ void main(void) {
 
                 // Decrementos
                 if(PORTBbits.RB5 == 0){ // Si se presiona decrementa
-                    __delay_ms(50);
+                    //__delay_ms(5);
 
                     if (modo == 0){
                         if (sec > 0){
@@ -175,6 +183,8 @@ void main(void) {
                 Escribir_dato(segundos, 14, 1);
                 Escribir_dato(minutos, 11, 1);
                 leer_temperatura();
+                __delay_ms(10);
+                
             }
             Escribir_dato(0, 14, 2);
             Escribir_dato(0, 11, 2);
@@ -184,18 +194,16 @@ void main(void) {
 
 void portsetup(){
     ANSEL = 0;
-    ANSELH = 0;
-    TRISA = 0;
-    PORTA = 0; 
+    ANSELH = 0; 
     TRISD = 0;
     PORTD = 0;
     
     // Configuración del puerto B 
-    TRISB = 0b11111100;
-    PORTB = 0b11111100;
-    WPUB = 0b11111100;      // Habilita el Weak Pull-Up en el puerto B
-    OPTION_REGbits.nRBPU = 0;   // Deshabilita el bit de RBPU
-    
+    TRISB = 0b11111110;
+    PORTB = 0b11111110;
+    WPUB = 0b11111110;      // Habilita el Weak Pull-Up en el puerto B
+    OPTION_REGbits.nRBPU = 0;   // Deshabilita el bit de RBPU  
+    __delay_ms(1000);
     I2C_Master_Init(100000);        // Inicializar Comuncación I2C
 }
 
@@ -208,18 +216,12 @@ void Escribir_dato(uint8_t dato, uint8_t posx, uint8_t posy){
     Lcd_Write_Char(decena);
 }
 
-unsigned DHT11_Join_Data(unsigned h, unsigned l)
-{
-    unsigned pow = 10;
-    while(l >= pow)
-        pow *= 10;
-    return h * pow + l;        
-}
 void leer_temperatura(){
     I2C_Master_Start();     // Inicia la comunicación I2C
-    I2C_Master_Write(0x11);        //Leer posición
+    I2C_Master_Write(0xa1);        
     tempint = I2C_Master_Read(0);      //lee posicion de reloj
-    tempdec = I2C_Master_Read(0);
+    //tempdec = I2C_Master_Read(0);
     I2C_Master_Stop();             //Termina comunicaion I2C
+    __delay_ms(30);
     Escribir_dato(tempint, 4, 2);
 }    

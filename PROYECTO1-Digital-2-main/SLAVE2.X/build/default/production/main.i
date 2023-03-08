@@ -2736,20 +2736,19 @@ void setupINTOSC(uint8_t IRCF);
 # 32 "main.c" 2
 
 # 1 "./dht11.h" 1
-# 15 "./dht11.h"
+# 19 "./dht11.h"
 void DHT11_Start(void);
-void DHT11_Response(void);
-int DHT11_Read_Byte(void);
-short DHT11_Read_Data(uint8_t *temint, uint8_t *tempdec);
+int DHT11_Response(void);
+unsigned int DHT11_Read(void);
+unsigned DHT11_Join_Data(unsigned h, unsigned l);
 # 34 "main.c" 2
 
 
 
 
 
-uint8_t z;
 uint8_t dato;
-uint8_t SERVO = 0;
+
 
 
 
@@ -2759,48 +2758,20 @@ void portsetup(void);
 void setupPWM(void);
 void setup_portb(void);
 void setupTMR0(void);
+void readTemp(void);
 
 short dht_ok;
 uint8_t temperaturai;
-uint8_t temperaturad;
 uint8_t z;
-
+uint8_t x;
+uint8_t check;
 
 
 
 
 
 void __attribute__((picinterrupt(("")))) isr(void){
-    if(INTCONbits.T0IF){
-        dht_ok = DHT11_Read_Data(&temperaturai, &temperaturad);
-        INTCONbits.T0IF = 0;
-        TMR0 = 100;
-        if (SERVO == 0){
-            PORTDbits.RD1 = 1;
-            _delay((unsigned long)((990)*(8000000/4000000.0)));
-            PORTDbits.RD1 = 0;
-        }
-        else {
-            PORTDbits.RD1 = 1;
-            _delay((unsigned long)((1500)*(8000000/4000000.0)));
-            PORTDbits.RD1 = 0;
-        }
-    }
-
-    if (RBIF == 1){
-        if (PORTBbits.RB7 == 0)
-        {
-            while(!PORTBbits.RB7);
-            if (SERVO != 0){
-                SERVO = 0;
-            }
-            else if (SERVO == 0){
-                SERVO = 1;
-            }
-            INTCONbits.RBIF = 0;
-        }
-    }
-
+# 78 "main.c"
     if(PIR1bits.SSPIF == 1){
 
         SSPCONbits.CKP = 0;
@@ -2821,13 +2792,14 @@ void __attribute__((picinterrupt(("")))) isr(void){
             while(!SSPSTATbits.BF);
 
             dato = SSPBUF;
+
             _delay((unsigned long)((250)*(8000000/4000000.0)));
 
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
-            BF = 0;
+            SSPSTATbits.BF = 0;
+            readTemp();
             SSPBUF = temperaturai;
-            SSPBUF = temperaturad;
             SSPCONbits.CKP = 1;
             _delay((unsigned long)((250)*(8000000/4000000.0)));
             while(SSPSTATbits.BF);
@@ -2845,21 +2817,19 @@ void __attribute__((picinterrupt(("")))) isr(void){
 void main(void) {
     setupINTOSC(7);
     portsetup();
-    setup_portb();
 
-    setupTMR0();
+
     dato = 0;
+
 
 
 
     while(1){
 
-        PORTA = temperaturai;
-        _delay((unsigned long)((200)*(8000000/4000.0)));
 
+        _delay((unsigned long)((50)*(8000000/4000.0)));
 
     }
-    return;
 }
 
 
@@ -2868,42 +2838,26 @@ void main(void) {
 void portsetup(){
     ANSEL = 0;
     ANSELH = 0;
-    TRISA = 0;
-    PORTA = 0;
-    TRISDbits.TRISD1 = 0;
-    PORTDbits.RD0 = 0;
 
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
-    I2C_Slave_Init(0x10);
+
+    T1CONbits.TMR1CS = 0;
+    T1CONbits.T1CKPS = 0b01;
+    T1CONbits.TMR1ON = 0;
+
+
+    I2C_Slave_Init(0xa0);
 }
 
 void setup_portb(void){
-    TRISB = 0b10000000;
-    INTCONbits.RBIE = 1;
-    INTCONbits.RBIF = 0;
-    IOCB = 0b10000000;
-    WPUB = 0b10000000;
+    TRISB = 0b11100000;
+
+
+
+    WPUB = 0b11100000;
     OPTION_REGbits.nRBPU = 0;
 }
 
-void setupPWM(void){
 
-    TRISCbits.TRISC2 = 1;
-
-    PR2 = 155;
-
-    CCP1CON = 0b00001100;
-
-    CCPR1L = SERVO;
-
-    TMR2IF = 0;
-    T2CONbits.T2CKPS = 0b11;
-    TMR2ON = 1;
-
-    while(!TMR2IF);
-    TRISCbits.TRISC2 = 0;
-}
 
 void setupTMR0(void){
     INTCONbits.GIE = 1;
@@ -2914,4 +2868,20 @@ void setupTMR0(void){
     OPTION_REGbits.PSA = 0;
     OPTION_REGbits.PS = 0b111;
     TMR0 = 100;
+}
+
+void readTemp(void){
+    _delay((unsigned long)((800)*(8000000/4000.0)));
+    DHT11_Start();
+    check = DHT11_Response();
+
+    if(check == 1){
+        x = DHT11_Read();
+        x = DHT11_Read();
+        temperaturai = DHT11_Read();
+        x = DHT11_Read();
+        x = DHT11_Read();
+        T1CONbits.TMR1ON = 0;
+    }
+
 }

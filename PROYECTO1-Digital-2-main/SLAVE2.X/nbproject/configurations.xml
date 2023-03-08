@@ -26,6 +26,7 @@
                    displayName="Important Files"
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
+      <itemPath>../SLAVE2SERVO.hex</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>

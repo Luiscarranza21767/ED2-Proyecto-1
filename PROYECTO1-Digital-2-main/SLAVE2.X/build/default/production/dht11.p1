@@ -21,10 +21,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 "370
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 370: extern volatile PORTDbits_t PORTDbits __attribute__((address(0x008)));
 [v _PORTDbits `VS11 ~T0 @X0 0 e@8 ]
-[v F36 `(v ~T0 @X0 1 tf1`ul ]
+[v F37 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
-[v __delay `JF36 ~T0 @X0 0 e ]
+[v __delay `JF37 ~T0 @X0 0 e ]
 [p i __delay ]
+"651 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 651: extern volatile unsigned short TMR1 __attribute__((address(0x00E)));
+[v _TMR1 `Vus ~T0 @X0 0 e@14 ]
+"678
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 678:     struct {
+[s S23 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S23 . TMR1ON TMR1CS nT1SYNC T1OSCEN T1CKPS TMR1GE T1GINV ]
+"687
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 687:     struct {
+[s S24 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S24 . . T1INSYNC . T1CKPS0 T1CKPS1 . T1GIV ]
+"696
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 696:     struct {
+[s S25 :2 `uc 1 :1 `uc 1 ]
+[n S25 . . T1SYNC ]
+"677
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 677: typedef union {
+[u S22 `S23 1 `S24 1 `S25 1 ]
+[n S22 . . . . ]
+"701
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 701: extern volatile T1CONbits_t T1CONbits __attribute__((address(0x010)));
+[v _T1CONbits `VS22 ~T0 @X0 0 e@16 ]
+"7 dht11.c
+[; ;dht11.c: 7: int timeout;
+[v _timeout `i ~T0 @X0 1 e ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 55: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -260,215 +285,213 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3547: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
 "11 dht11.c
-[; ;dht11.c: 11: void DHT11_Start(void)
+[; ;dht11.c: 11: void DHT11_Start(void){
 [v _DHT11_Start `(v ~T0 @X0 1 ef ]
-"12
-[; ;dht11.c: 12: {
 {
 [e :U _DHT11_Start ]
 [f ]
-"13
-[; ;dht11.c: 13:     TRISDbits.TRISD0 = 0;
+"12
+[; ;dht11.c: 12:     TRISDbits.TRISD0 = 0;
 [e = . . _TRISDbits 0 0 -> -> 0 `i `uc ]
-"14
-[; ;dht11.c: 14:     PORTDbits.RD0 = 0;
+"13
+[; ;dht11.c: 13:     PORTDbits.RD0 = 0;
 [e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
+"14
+[; ;dht11.c: 14:     _delay((unsigned long)((25)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 25 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "15
-[; ;dht11.c: 15:     _delay((unsigned long)((20)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"16
-[; ;dht11.c: 16:     PORTDbits.RD0 = 1;
+[; ;dht11.c: 15:     PORTDbits.RD0 = 1;
 [e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
+"16
+[; ;dht11.c: 16:     _delay((unsigned long)((25)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 25 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "17
-[; ;dht11.c: 17:     _delay((unsigned long)((30)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"18
-[; ;dht11.c: 18:     TRISDbits.TRISD0 = 1;
+[; ;dht11.c: 17:     TRISDbits.TRISD0 = 1;
 [e = . . _TRISDbits 0 0 -> -> 1 `i `uc ]
-"19
-[; ;dht11.c: 19: }
+"18
+[; ;dht11.c: 18: }
 [e :UE 138 ]
 }
-"21
-[; ;dht11.c: 21: void DHT11_Response(void)
-[v _DHT11_Response `(v ~T0 @X0 1 ef ]
-"22
-[; ;dht11.c: 22: {
+"20
+[; ;dht11.c: 20: int DHT11_Response(void){
+[v _DHT11_Response `(i ~T0 @X0 1 ef ]
 {
 [e :U _DHT11_Response ]
 [f ]
+"21
+[; ;dht11.c: 21:     timeout=0;
+[e = _timeout -> 0 `i ]
+"22
+[; ;dht11.c: 22:     TMR1 = 0;
+[e = _TMR1 -> -> 0 `i `us ]
 "23
-[; ;dht11.c: 23:     while(PORTDbits.RD0 == 1);
+[; ;dht11.c: 23:     T1CONbits.TMR1ON = 1;
+[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
+"24
+[; ;dht11.c: 24:     while(!PORTDbits.RD0 && TMR1 < 100);
 [e $U 140  ]
 [e :U 141 ]
 [e :U 140 ]
-[e $ == -> . . _PORTDbits 0 0 `i -> 1 `i 141  ]
+[e $ && ! != -> . . _PORTDbits 0 0 `i -> 0 `i < -> _TMR1 `ui -> -> 100 `i `ui 141  ]
 [e :U 142 ]
-"24
-[; ;dht11.c: 24:     while(PORTDbits.RD0 == 0);
-[e $U 143  ]
-[e :U 144 ]
-[e :U 143 ]
-[e $ == -> . . _PORTDbits 0 0 `i -> 0 `i 144  ]
-[e :U 145 ]
 "25
-[; ;dht11.c: 25:     while(PORTDbits.RD0 == 1);
-[e $U 146  ]
-[e :U 147 ]
-[e :U 146 ]
-[e $ == -> . . _PORTDbits 0 0 `i -> 1 `i 147  ]
-[e :U 148 ]
+[; ;dht11.c: 25:         if(TMR1 > 99){
+[e $ ! > -> _TMR1 `ui -> -> 99 `i `ui 143  ]
+{
 "26
-[; ;dht11.c: 26: }
-[e :UE 139 ]
+[; ;dht11.c: 26:             return 0;
+[e ) -> 0 `i ]
+[e $UE 139  ]
+"27
+[; ;dht11.c: 27:         }
 }
+[e $U 144  ]
 "28
-[; ;dht11.c: 28: int DHT11_Read_Byte(void)
-[v _DHT11_Read_Byte `(i ~T0 @X0 1 ef ]
+[; ;dht11.c: 28:         else{
+[e :U 143 ]
+{
 "29
-[; ;dht11.c: 29: {
-{
-[e :U _DHT11_Read_Byte ]
-[f ]
+[; ;dht11.c: 29:             TMR1 = 0;
+[e = _TMR1 -> -> 0 `i `us ]
 "30
-[; ;dht11.c: 30:     int i,data = 0;
-[v _i `i ~T0 @X0 1 a ]
-[v _data `i ~T0 @X0 1 a ]
-[e = _data -> 0 `i ]
+[; ;dht11.c: 30:             while(PORTDbits.RD0 && TMR1 < 100);
+[e $U 145  ]
+[e :U 146 ]
+[e :U 145 ]
+[e $ && != -> . . _PORTDbits 0 0 `i -> 0 `i < -> _TMR1 `ui -> -> 100 `i `ui 146  ]
+[e :U 147 ]
 "31
-[; ;dht11.c: 31:     for(i=0;i<8;i++){
-{
-[e = _i -> 0 `i ]
-[e $ < _i -> 8 `i 150  ]
-[e $U 151  ]
-[e :U 150 ]
+[; ;dht11.c: 31:             if(TMR1 > 99){
+[e $ ! > -> _TMR1 `ui -> -> 99 `i `ui 148  ]
 {
 "32
-[; ;dht11.c: 32:         while((PORTDbits.RD0) == 0);
-[e $U 153  ]
-[e :U 154 ]
-[e :U 153 ]
-[e $ == -> . . _PORTDbits 0 0 `i -> 0 `i 154  ]
-[e :U 155 ]
+[; ;dht11.c: 32:                  return 0;
+[e ) -> 0 `i ]
+[e $UE 139  ]
 "33
-[; ;dht11.c: 33:         _delay((unsigned long)((30)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;dht11.c: 33:             }
+}
+[e $U 149  ]
 "34
-[; ;dht11.c: 34:         if((PORTDbits.RD0) == 1){
-[e $ ! == -> . . _PORTDbits 0 0 `i -> 1 `i 156  ]
+[; ;dht11.c: 34:             else{
+[e :U 148 ]
 {
 "35
-[; ;dht11.c: 35:             data = ((data<<1) | 1);
-[e = _data | << _data -> 1 `i -> 1 `i ]
+[; ;dht11.c: 35:                 return 1;
+[e ) -> 1 `i ]
+[e $UE 139  ]
 "36
-[; ;dht11.c: 36:         }else{
+[; ;dht11.c: 36:             }
 }
-[e $U 157  ]
-[e :U 156 ]
-{
+[e :U 149 ]
 "37
-[; ;dht11.c: 37:             data = (data<<1);
-[e = _data << _data -> 1 `i ]
+[; ;dht11.c: 37:         }
+}
+[e :U 144 ]
 "38
-[; ;dht11.c: 38:         }
+[; ;dht11.c: 38: }
+[e :UE 139 ]
 }
-[e :U 157 ]
-"39
-[; ;dht11.c: 39:         while((PORTDbits.RD0) == 1);
-[e $U 158  ]
-[e :U 159 ]
-[e :U 158 ]
-[e $ == -> . . _PORTDbits 0 0 `i -> 1 `i 159  ]
-[e :U 160 ]
 "40
-[; ;dht11.c: 40:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 8 `i 150  ]
-[e :U 151 ]
-}
-"41
-[; ;dht11.c: 41:     return data;
-[e ) _data ]
-[e $UE 149  ]
-"42
-[; ;dht11.c: 42: }
-[e :UE 149 ]
-}
-"44
-[; ;dht11.c: 44: short DHT11_Read_Data(uint8_t *temint, uint8_t *tempdec)
-[v _DHT11_Read_Data `(s ~T0 @X0 1 ef2`*uc`*uc ]
-"45
-[; ;dht11.c: 45: {
+[; ;dht11.c: 40: unsigned int DHT11_Read(void){
+[v _DHT11_Read `(ui ~T0 @X0 1 ef ]
 {
-[e :U _DHT11_Read_Data ]
-"44
-[; ;dht11.c: 44: short DHT11_Read_Data(uint8_t *temint, uint8_t *tempdec)
-[v _temint `*uc ~T0 @X0 1 r1 ]
-[v _tempdec `*uc ~T0 @X0 1 r2 ]
-"45
-[; ;dht11.c: 45: {
+[e :U _DHT11_Read ]
 [f ]
+"41
+[; ;dht11.c: 41:     uint8_t i;
+[v _i `uc ~T0 @X0 1 a ]
+"42
+[; ;dht11.c: 42:     unsigned int _data = 0;
+[v __data `ui ~T0 @X0 1 a ]
+[e = __data -> -> 0 `i `ui ]
+"44
+[; ;dht11.c: 44:     if(timeout){
+[e $ ! != _timeout -> 0 `i 151  ]
+{
 "46
-[; ;dht11.c: 46:     int temp = 0;
-[v _temp `i ~T0 @X0 1 a ]
-[e = _temp -> 0 `i ]
-"47
-[; ;dht11.c: 47:     int info[5];
-[v _info `i ~T0 @X0 -> 5 `i a ]
-"48
-[; ;dht11.c: 48:     DHT11_Start();
-[e ( _DHT11_Start ..  ]
-"49
-[; ;dht11.c: 49:     DHT11_Response();
-[e ( _DHT11_Response ..  ]
-"50
-[; ;dht11.c: 50:     info[0] = DHT11_Read_Byte();
-[e = *U + &U _info * -> -> -> 0 `i `ui `ux -> -> # *U &U _info `ui `ux ( _DHT11_Read_Byte ..  ]
-"51
-[; ;dht11.c: 51:     info[1] = DHT11_Read_Byte();
-[e = *U + &U _info * -> -> -> 1 `i `ui `ux -> -> # *U &U _info `ui `ux ( _DHT11_Read_Byte ..  ]
-"52
-[; ;dht11.c: 52:     info[2] = DHT11_Read_Byte();
-[e = *U + &U _info * -> -> -> 2 `i `ui `ux -> -> # *U &U _info `ui `ux ( _DHT11_Read_Byte ..  ]
-"53
-[; ;dht11.c: 53:     info[3] = DHT11_Read_Byte();
-[e = *U + &U _info * -> -> -> 3 `i `ui `ux -> -> # *U &U _info `ui `ux ( _DHT11_Read_Byte ..  ]
-"54
-[; ;dht11.c: 54:     info[4] = DHT11_Read_Byte();
-[e = *U + &U _info * -> -> -> 4 `i `ui `ux -> -> # *U &U _info `ui `ux ( _DHT11_Read_Byte ..  ]
-"55
-[; ;dht11.c: 55:     *temint = info[2];
-[e = *U _temint -> *U + &U _info * -> -> -> 2 `i `ui `ux -> -> # *U &U _info `ui `ux `uc ]
-"56
-[; ;dht11.c: 56:     *tempdec = info[3];
-[e = *U _tempdec -> *U + &U _info * -> -> -> 3 `i `ui `ux -> -> # *U &U _info `ui `ux `uc ]
-"57
-[; ;dht11.c: 57:     temp = (info[0] + info[1] + info[2] + info[3])& 0xFF;
-[e = _temp & + + + *U + &U _info * -> -> -> 0 `i `ui `ux -> -> # *U &U _info `ui `ux *U + &U _info * -> -> -> 1 `i `ui `ux -> -> # *U &U _info `ui `ux *U + &U _info * -> -> -> 2 `i `ui `ux -> -> # *U &U _info `ui `ux *U + &U _info * -> -> -> 3 `i `ui `ux -> -> # *U &U _info `ui `ux -> 255 `i ]
-"58
-[; ;dht11.c: 58:     if(temp == info[4]){
-[e $ ! == _temp *U + &U _info * -> -> -> 4 `i `ui `ux -> -> # *U &U _info `ui `ux 162  ]
-{
-"59
-[; ;dht11.c: 59:         return 1;
-[e ) -> -> 1 `i `s ]
-[e $UE 161  ]
-"60
-[; ;dht11.c: 60:     }else{
+[; ;dht11.c: 46:     }
 }
-[e $U 163  ]
-[e :U 162 ]
+[e :U 151 ]
+"47
+[; ;dht11.c: 47:     for(i = 0; i < 8; i++){
 {
-"61
-[; ;dht11.c: 61:         return 0;
-[e ) -> -> 0 `i `s ]
-[e $UE 161  ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 152  ]
+[e $U 153  ]
+[e :U 152 ]
+{
+"48
+[; ;dht11.c: 48:         TMR1 = 0;
+[e = _TMR1 -> -> 0 `i `us ]
+"49
+[; ;dht11.c: 49:         while(!PORTDbits.RD0);
+[e $U 155  ]
+[e :U 156 ]
+[e :U 155 ]
+[e $ ! != -> . . _PORTDbits 0 0 `i -> 0 `i 156  ]
+[e :U 157 ]
+"50
+[; ;dht11.c: 50:         if(TMR1 > 100){
+[e $ ! > -> _TMR1 `ui -> -> 100 `i `ui 158  ]
+{
+"51
+[; ;dht11.c: 51:             timeout = 1;
+[e = _timeout -> 1 `i ]
+"52
+[; ;dht11.c: 52:             break;
+[e $U 153  ]
+"53
+[; ;dht11.c: 53:         }
+}
+[e :U 158 ]
+"54
+[; ;dht11.c: 54:         TMR1 = 0;
+[e = _TMR1 -> -> 0 `i `us ]
+"55
+[; ;dht11.c: 55:         while(PORTDbits.RD0);
+[e $U 159  ]
+[e :U 160 ]
+[e :U 159 ]
+[e $ != -> . . _PORTDbits 0 0 `i -> 0 `i 160  ]
+[e :U 161 ]
+"56
+[; ;dht11.c: 56:         if(TMR1 > 100){
+[e $ ! > -> _TMR1 `ui -> -> 100 `i `ui 162  ]
+{
+"57
+[; ;dht11.c: 57:             timeout = 1;
+[e = _timeout -> 1 `i ]
+"58
+[; ;dht11.c: 58:             break;
+[e $U 153  ]
+"59
+[; ;dht11.c: 59:         }
+}
+[e :U 162 ]
+"60
+[; ;dht11.c: 60:         if(TMR1 > 50){
+[e $ ! > -> _TMR1 `ui -> -> 50 `i `ui 163  ]
+{
 "62
-[; ;dht11.c: 62:    }
+[; ;dht11.c: 62:             _data|= (1 << (7 - i));
+[e =| __data -> << -> 1 `i - -> 7 `i -> _i `i `ui ]
+"63
+[; ;dht11.c: 63:         }
 }
 [e :U 163 ]
-"63
-[; ;dht11.c: 63: }
-[e :UE 161 ]
+"64
+[; ;dht11.c: 64:   }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 152  ]
+[e :U 153 ]
+}
+"65
+[; ;dht11.c: 65:   return _data;
+[e ) __data ]
+[e $UE 150  ]
+"66
+[; ;dht11.c: 66:  }
+[e :UE 150 ]
 }

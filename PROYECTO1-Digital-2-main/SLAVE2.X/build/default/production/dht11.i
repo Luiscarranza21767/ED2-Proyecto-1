@@ -13,17 +13,10 @@
 
 
 
+int timeout;
 
-
-# 1 "./dht11.h" 1
-
-
-
-
-
-
-
-
+# 1 "./DHT11.h" 1
+# 17 "./DHT11.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2641,70 +2634,72 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 9 "./dht11.h" 2
-
-
-
-
+# 17 "./DHT11.h" 2
 
 
 void DHT11_Start(void);
-void DHT11_Response(void);
-int DHT11_Read_Byte(void);
-short DHT11_Read_Data(uint8_t *temint, uint8_t *tempdec);
+int DHT11_Response(void);
+unsigned int DHT11_Read(void);
+unsigned DHT11_Join_Data(unsigned h, unsigned l);
+# 8 "dht11.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
 # 9 "dht11.c" 2
 
 
-void DHT11_Start(void)
-{
+void DHT11_Start(void){
     TRISDbits.TRISD0 = 0;
     PORTDbits.RD0 = 0;
-    _delay((unsigned long)((20)*(8000000/4000.0)));
+    _delay((unsigned long)((25)*(8000000/4000.0)));
     PORTDbits.RD0 = 1;
-    _delay((unsigned long)((30)*(8000000/4000000.0)));
+    _delay((unsigned long)((25)*(8000000/4000000.0)));
     TRISDbits.TRISD0 = 1;
 }
 
-void DHT11_Response(void)
-{
-    while(PORTDbits.RD0 == 1);
-    while(PORTDbits.RD0 == 0);
-    while(PORTDbits.RD0 == 1);
-}
-
-int DHT11_Read_Byte(void)
-{
-    int i,data = 0;
-    for(i=0;i<8;i++){
-        while((PORTDbits.RD0) == 0);
-        _delay((unsigned long)((30)*(8000000/4000000.0)));
-        if((PORTDbits.RD0) == 1){
-            data = ((data<<1) | 1);
-        }else{
-            data = (data<<1);
+int DHT11_Response(void){
+    timeout=0;
+    TMR1 = 0;
+    T1CONbits.TMR1ON = 1;
+    while(!PORTDbits.RD0 && TMR1 < 100);
+        if(TMR1 > 99){
+            return 0;
         }
-        while((PORTDbits.RD0) == 1);
-    }
-    return data;
+        else{
+            TMR1 = 0;
+            while(PORTDbits.RD0 && TMR1 < 100);
+            if(TMR1 > 99){
+                 return 0;
+            }
+            else{
+                return 1;
+            }
+        }
 }
 
-short DHT11_Read_Data(uint8_t *temint, uint8_t *tempdec)
-{
-    int temp = 0;
-    int info[5];
-    DHT11_Start();
-    DHT11_Response();
-    info[0] = DHT11_Read_Byte();
-    info[1] = DHT11_Read_Byte();
-    info[2] = DHT11_Read_Byte();
-    info[3] = DHT11_Read_Byte();
-    info[4] = DHT11_Read_Byte();
-    *temint = info[2];
-    *tempdec = info[3];
-    temp = (info[0] + info[1] + info[2] + info[3])& 0xFF;
-    if(temp == info[4]){
-        return 1;
-    }else{
-        return 0;
-   }
-}
+unsigned int DHT11_Read(void){
+    uint8_t i;
+    unsigned int _data = 0;
+
+    if(timeout){
+        ;
+    }
+    for(i = 0; i < 8; i++){
+        TMR1 = 0;
+        while(!PORTDbits.RD0);
+        if(TMR1 > 100){
+            timeout = 1;
+            break;
+        }
+        TMR1 = 0;
+        while(PORTDbits.RD0);
+        if(TMR1 > 100){
+            timeout = 1;
+            break;
+        }
+        if(TMR1 > 50){
+
+            _data|= (1 << (7 - i));
+        }
+  }
+  return _data;
+ }

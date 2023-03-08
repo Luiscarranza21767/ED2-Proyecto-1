@@ -1,63 +1,66 @@
-/* #include "dht11.h"
-*
-* Creada por: Ing. Abiezer Hernandez O.
-* Fecha de creacion: 10/11/2020
-* Electronica y Circuitos
-*
-*/
+/*
+ * File:   DHT11.c
+ * xd
+ * Created on 3 de marzo de 2023, 07:07 PM
+ */
 
-#include "dht11.h"
+int timeout;
+#include "DHT11.h"
+#include <stdint.h>
 
-void DHT11_Start(void)
-{
-    DHT11_PIN_DIR = 0;
-    DHT11_PIN_PORT = 0;
-    __delay_ms(20);
-    DHT11_PIN_PORT = 1;
-    __delay_us(30);
-    DHT11_PIN_DIR = 1;
+void DHT11_Start(void){
+    TRISDbits.TRISD0 = 0;
+    PORTDbits.RD0 = 0;
+    __delay_ms(25);
+    PORTDbits.RD0 = 1; 
+    __delay_us(25);
+    TRISDbits.TRISD0 = 1;
 }
 
-void DHT11_Response(void)
-{
-    while(DHT11_PIN_PORT == 1);
-    while(DHT11_PIN_PORT == 0);
-    while(DHT11_PIN_PORT == 1);
-}
-
-int DHT11_Read_Byte(void)
-{
-    int i,data = 0;
-    for(i=0;i<8;i++){
-        while((DHT11_PIN_PORT) == 0);
-        __delay_us(30);
-        if((DHT11_PIN_PORT) == 1){
-            data = ((data<<1) | 1);
-        }else{
-            data = (data<<1);
+int DHT11_Response(void){
+    timeout=0;
+    TMR1 = 0; 
+    T1CONbits.TMR1ON = 1;
+    while(!PORTDbits.RD0 && TMR1 < 100);           // Wait until DHT11_PIN becomes high (cheking of 80µs low time response)
+        if(TMR1 > 99){
+            return 0;
+        }                                          // Return 0 (Device has a problem with response)
+        else{
+            TMR1 = 0;                              // Set Timer1 value to 0
+            while(PORTDbits.RD0 && TMR1 < 100);    // Wait until DHT11_PIN becomes low (cheking of 80µs high time response)
+            if(TMR1 > 99){
+                 return 0;
+            }                                      // If response time > 99µS  ==> Response error
+            else{
+                return 1;
+            }
         }
-        while((DHT11_PIN_PORT) == 1);
-    }
-    return data;
 }
 
-short DHT11_Read_Data(uint8_t *temint, uint8_t *tempdec)
-{
-    int temp = 0;
-    int info[5];
-    DHT11_Start();
-    DHT11_Response();
-    info[0] = DHT11_Read_Byte();   // Humedad entero
-    info[1] = DHT11_Read_Byte();   // Humedad decimal
-    info[2] = DHT11_Read_Byte();   // Temp entero
-    info[3] = DHT11_Read_Byte();   // Temp decimal
-    info[4] = DHT11_Read_Byte();   // Paridad
-    *temint = info[2];
-    *tempdec = info[3];
-    temp = (info[0] + info[1] + info[2] + info[3])& 0xFF;
-    if(temp == info[4]){
-        return 1;
-    }else{
-        return 0;
-   }
-}
+unsigned int DHT11_Read(void){
+    uint8_t i;
+    unsigned int _data = 0;
+    
+    if(timeout){
+        ;
+    }
+    for(i = 0; i < 8; i++){
+        TMR1 = 0;                                        // Set Timer1 value to 0
+        while(!PORTDbits.RD0);                          // Wait until DHT11_PIN becomes high
+        if(TMR1 > 100){                         // If low time > 100  ==>  Time out error (Normally it takes 50µs)
+            timeout = 1;
+            break;
+        }
+        TMR1 = 0;                                    // Set Timer1 value to 0
+        while(PORTDbits.RD0);                           // Wait until DHT11_PIN becomes low
+        if(TMR1 > 100){                         // If high time > 100  ==>  Time out error (Normally it takes 26-28µs for 0 and 70µs for 1)
+            timeout = 1;
+            break;
+        }
+        if(TMR1 > 50){
+             //bit_set(_data, (7 - i));  
+            _data|= (1 << (7 - i));
+        }                           
+  }
+  return _data;
+ }
