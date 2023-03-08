@@ -5,7 +5,7 @@
  Proyecto: Proyecto 1 - Master
  Hardware PIC16F887
  Creado: 09/02/23
- Última Modificación: 7/03/23*/
+ Última Modificación: 8/03/23*/
 
 // CONFIG1
 #pragma config FOSC = INTRC_NOCLKOUT // Oscillator Selection bits (INTOSC 
@@ -196,7 +196,15 @@ void main(void) {
             I2C_Master_Write(0);       
             I2C_Master_Stop();
             SERVO = 0;
+            
             __delay_ms(500);
+            
+            I2C_Master_Start();            //Incia comunicaión I2C
+            I2C_Master_Write(0xb0);        //Escoje dirección del slave 3
+            I2C_Master_Write(0x02);       
+            I2C_Master_Stop();
+            
+            
             while(PORTBbits.RB3 & !((sec == segundos) & (min == minutos)) ){ //Mientras no se presione cancelar o no termine
                 //Mientras no coincidan los segundos o se cancele el proceso recibe los datos del RTC
                 segundos = leer_x(0x00);
@@ -208,6 +216,12 @@ void main(void) {
                 __delay_ms(10);
                 
             }
+            
+            I2C_Master_Start();            //Incia comunicaión I2C
+            I2C_Master_Write(0xb0);        //Escoje dirección del slave 3
+            I2C_Master_Write(0x03);       
+            I2C_Master_Stop();
+            
             // Cuando termina resetea la información del display
             Escribir_dato(0, 14, 2);
             Escribir_dato(0, 11, 2);

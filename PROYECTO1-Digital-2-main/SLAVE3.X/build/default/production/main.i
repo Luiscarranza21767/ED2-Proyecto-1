@@ -2736,14 +2736,26 @@ void setupINTOSC(uint8_t IRCF);
 # 38 "main.c" 2
 
 
+# 1 "./PWM.h" 1
+# 37 "./PWM.h"
+void setupPWM(void);
+uint32_t pwmMaxDuty(const uint32_t freq);
+void initPwm(const uint32_t freq);
+void applyPWMDutyCycle(uint16_t dutyCycle, const uint32_t freq);
+# 40 "main.c" 2
 
 
 
 
 
 
-uint8_t dato;
+
+uint8_t dato = 0;
 uint8_t SERVO = 0;
+uint8_t ADC;
+uint16_t dutycycle = 0;
+uint16_t dutyCycleApply = 0;
+const uint32_t pwmFreq = 5000;
 
 
 
@@ -2752,6 +2764,7 @@ uint8_t SERVO = 0;
 void portsetup(void);
 void setupPWM(void);
 void setupTMR0(void);
+
 
 uint8_t z;
 
@@ -2766,14 +2779,14 @@ void __attribute__((picinterrupt(("")))) isr(void){
         INTCONbits.T0IF = 0;
         TMR0 = 100;
 
-        if(SERVO ==0){
+        if(SERVO == 0){
             PORTDbits.RD1 = 1;
             _delay((unsigned long)((900)*(8000000/4000000.0)));
             PORTDbits.RD1 = 0;
         }
-        else{
+        else if (SERVO == 1){
             PORTDbits.RD1 = 1;
-            _delay((unsigned long)((1800)*(8000000/4000000.0)));
+            _delay((unsigned long)((1900)*(8000000/4000000.0)));
             PORTDbits.RD1 = 0;
         }
     }
@@ -2794,7 +2807,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
 
             SSPCONbits.CKP = 1;
             while(!SSPSTATbits.BF);
-            SERVO = SSPBUF;
+            dato = SSPBUF;
             _delay((unsigned long)((250)*(8000000/4000000.0)));
 
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
@@ -2819,12 +2832,37 @@ void main(void) {
     setupINTOSC(7);
     portsetup();
     setupTMR0();
-    dato = 0;
+    setupPWM();
+    initPwm(pwmFreq);
+    applyPWMDutyCycle(dutycycle,pwmFreq);
+    ADC_config(0x01);
 
 
 
 
-    while(1){}
+    while(1){
+        if (dato == 0){
+            SERVO = 0;
+        }
+        else if(dato == 1){
+            SERVO = 1;
+        }
+        else if (dato == 2){
+            ADC = ADC_read(0);
+            dutycycle = 4*ADC;
+            if (dutycycle != dutyCycleApply){
+                applyPWMDutyCycle(dutycycle,pwmFreq);
+                dutyCycleApply = dutycycle;
+            }
+        }
+        else if (dato == 3){
+            dutycycle = 0;
+            if (dutycycle != dutyCycleApply){
+                applyPWMDutyCycle(dutycycle,pwmFreq);
+                dutyCycleApply = dutycycle;
+            }
+        }
+    }
 }
 
 

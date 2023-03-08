@@ -28,7 +28,7 @@ cstackBANK0 BANK0 1 29 29 3 1 1
 intentry CODE 0 4 4 8 2 1
 bssBANK0 BANK0 1 20 20 9 1 1
 config CONFIG 4 2007 2007 2 2 1
-$C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.o
+$C:\Users\Pablo\AppData\Local\Temp\xcAsaus.o
 idloc IDLOC 5 2000 2000 4 2 1
 reset_vec CODE 0 0 0 3 2 1
 end_init CODE 0 C C 3 2 1
@@ -76,23 +76,23 @@ STRING 22E-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\SLAVE2.X.production.o
-F cinit CODE >1134:C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.s
-F cinit CODE >1137:C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.s
-F cinit CODE >1166:C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.s
-10 cinit CODE >1167:C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.s
-11 cinit CODE >1168:C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.s
-12 cinit CODE >1169:C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.s
-13 cinit CODE >1170:C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.s
-14 cinit CODE >1171:C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.s
-15 cinit CODE >1172:C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.s
-16 cinit CODE >1173:C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.s
-17 cinit CODE >1174:C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.s
-18 cinit CODE >1175:C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.s
-19 cinit CODE >1176:C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.s
-1A cinit CODE >1182:C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.s
-1A cinit CODE >1184:C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.s
-1B cinit CODE >1185:C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.s
-4 intentry CODE >62:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+F cinit CODE >1124:C:\Users\Pablo\AppData\Local\Temp\xcAsaus.s
+F cinit CODE >1127:C:\Users\Pablo\AppData\Local\Temp\xcAsaus.s
+F cinit CODE >1156:C:\Users\Pablo\AppData\Local\Temp\xcAsaus.s
+10 cinit CODE >1157:C:\Users\Pablo\AppData\Local\Temp\xcAsaus.s
+11 cinit CODE >1158:C:\Users\Pablo\AppData\Local\Temp\xcAsaus.s
+12 cinit CODE >1159:C:\Users\Pablo\AppData\Local\Temp\xcAsaus.s
+13 cinit CODE >1160:C:\Users\Pablo\AppData\Local\Temp\xcAsaus.s
+14 cinit CODE >1161:C:\Users\Pablo\AppData\Local\Temp\xcAsaus.s
+15 cinit CODE >1162:C:\Users\Pablo\AppData\Local\Temp\xcAsaus.s
+16 cinit CODE >1163:C:\Users\Pablo\AppData\Local\Temp\xcAsaus.s
+17 cinit CODE >1164:C:\Users\Pablo\AppData\Local\Temp\xcAsaus.s
+18 cinit CODE >1165:C:\Users\Pablo\AppData\Local\Temp\xcAsaus.s
+19 cinit CODE >1166:C:\Users\Pablo\AppData\Local\Temp\xcAsaus.s
+1A cinit CODE >1172:C:\Users\Pablo\AppData\Local\Temp\xcAsaus.s
+1A cinit CODE >1174:C:\Users\Pablo\AppData\Local\Temp\xcAsaus.s
+1B cinit CODE >1175:C:\Users\Pablo\AppData\Local\Temp\xcAsaus.s
+4 intentry CODE >68:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
 E8 text8 CODE >40:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\dht11.c
 E8 text8 CODE >42:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\dht11.c
 EA text8 CODE >47:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\dht11.c
@@ -146,44 +146,44 @@ FC text8 CODE >51:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2
 212 text6 CODE >16:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\dht11.c
 217 text6 CODE >17:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\dht11.c
 21A text6 CODE >18:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\dht11.c
-13B text5 CODE >176:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-13B text5 CODE >177:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-148 text5 CODE >178:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-14D text5 CODE >179:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-156 text5 CODE >181:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-15B text5 CODE >182:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-164 text5 CODE >183:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-16D text5 CODE >184:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-176 text5 CODE >185:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-17F text5 CODE >186:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-188 text5 CODE >187:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-189 text5 CODE >190:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-86 text4 CODE >62:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-86 text4 CODE >78:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-8C text4 CODE >80:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-8D text4 CODE >82:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-95 text4 CODE >83:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-97 text4 CODE >84:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-98 text4 CODE >85:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-99 text4 CODE >86:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-9A text4 CODE >89:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-A4 text4 CODE >91:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-A8 text4 CODE >93:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-A9 text4 CODE >94:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-AA text4 CODE >95:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-B0 text4 CODE >97:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-B4 text4 CODE >99:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-B9 text4 CODE >101:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-C2 text4 CODE >102:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-C6 text4 CODE >103:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-C9 text4 CODE >104:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-CE text4 CODE >105:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-D2 text4 CODE >106:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-D3 text4 CODE >107:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-D8 text4 CODE >108:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-DE text4 CODE >110:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-DE text4 CODE >112:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-E1 text4 CODE >115:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+13B text5 CODE >138:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+13B text5 CODE >139:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+148 text5 CODE >140:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+14D text5 CODE >141:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+156 text5 CODE >143:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+15B text5 CODE >144:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+164 text5 CODE >145:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+16D text5 CODE >146:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+176 text5 CODE >147:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+17F text5 CODE >148:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+188 text5 CODE >149:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+189 text5 CODE >152:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+86 text4 CODE >68:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+86 text4 CODE >69:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+8C text4 CODE >71:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+8D text4 CODE >73:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+95 text4 CODE >74:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+97 text4 CODE >75:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+98 text4 CODE >76:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+99 text4 CODE >77:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+9A text4 CODE >80:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+A4 text4 CODE >82:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+A8 text4 CODE >84:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+A9 text4 CODE >85:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+AA text4 CODE >86:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+B0 text4 CODE >88:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+B4 text4 CODE >89:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+B9 text4 CODE >91:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+C2 text4 CODE >92:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+C6 text4 CODE >93:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+C9 text4 CODE >94:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+CE text4 CODE >95:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+D2 text4 CODE >96:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+D3 text4 CODE >97:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+D8 text4 CODE >98:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+DE text4 CODE >100:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+DE text4 CODE >102:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+E1 text4 CODE >105:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
 1E4 text3 CODE >93:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main/SLAVE1.X/I2C.c
 1E7 text3 CODE >95:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main/SLAVE1.X/I2C.c
 1EB text3 CODE >96:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main/SLAVE1.X/I2C.c
@@ -196,14 +196,14 @@ E1 text4 CODE >115:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-
 1F9 text3 CODE >103:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main/SLAVE1.X/I2C.c
 1FC text3 CODE >104:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main/SLAVE1.X/I2C.c
 1FF text3 CODE >105:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main/SLAVE1.X/I2C.c
-21B text2 CODE >141:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-21B text2 CODE >142:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-21E text2 CODE >143:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-21F text2 CODE >146:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-222 text2 CODE >147:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-226 text2 CODE >148:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-227 text2 CODE >151:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-22D text2 CODE >152:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+21B text2 CODE >127:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+21B text2 CODE >128:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+21E text2 CODE >129:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+21F text2 CODE >132:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+222 text2 CODE >133:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+226 text2 CODE >134:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+227 text2 CODE >135:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+22D text2 CODE >136:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
 1E text1 CODE >10:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main/SLAVE1.X/oscilador.c
 21 text1 CODE >11:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main/SLAVE1.X/oscilador.c
 27 text1 CODE >12:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main/SLAVE1.X/oscilador.c
@@ -230,11 +230,11 @@ E1 text4 CODE >115:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-
 7E text1 CODE >33:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main/SLAVE1.X/oscilador.c
 82 text1 CODE >36:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main/SLAVE1.X/oscilador.c
 85 text1 CODE >37:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main/SLAVE1.X/oscilador.c
-1C8 maintext CODE >120:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-1C8 maintext CODE >121:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-1CE maintext CODE >122:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-1D3 maintext CODE >125:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
-1D6 maintext CODE >133:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+1C8 maintext CODE >110:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+1C8 maintext CODE >111:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+1CE maintext CODE >112:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+1D3 maintext CODE >113:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
+1D6 maintext CODE >119:D:\Backup\Documentos\GitHub\ED2-Proyecto-1\PROYECTO1-Digital-2-main\SLAVE2.X\main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -262,25 +262,22 @@ DHT11_Read@i 77 0 COMMON 1 cstackCOMMON dist/default/production\SLAVE2.X.product
 __Hstrings 0 0 ABS 0 strings -
 _ADIF 66 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _PEIE 5E 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
-_TMR0 1 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _TMR1 E 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
-_WPUB 95 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.o
+___sp 0 0 STACK 2 stack C:\Users\Pablo\AppData\Local\Temp\xcAsaus.o
 _dato 28 0 BANK0 1 bssBANK0 dist/default/production\SLAVE2.X.production.o
 _main 390 0 CODE 0 maintext dist/default/production\SLAVE2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
-start 18 0 CODE 0 init C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.o
+start 18 0 CODE 0 init C:\Users\Pablo\AppData\Local\Temp\xcAsaus.o
 __end_of_DHT11_Response 390 0 CODE 0 text7 dist/default/production\SLAVE2.X.production.o
-_OPTION_REGbits 81 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 __end_of_DHT11_Read 276 0 CODE 0 text8 dist/default/production\SLAVE2.X.production.o
 ?_DHT11_Response 70 0 COMMON 1 cstackCOMMON dist/default/production\SLAVE2.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAsaus.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAsaus.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAsaus.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAsaus.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAsaus.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Pablo\AppData\Local\Temp\xcAsaus.o
 _DHT11_Start 400 0 CODE 0 text6 dist/default/production\SLAVE2.X.production.o
 _setupINTOSC 3C 0 CODE 0 text1 dist/default/production\SLAVE2.X.production.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
@@ -292,8 +289,8 @@ _ADRESH 1E 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _SSPCONbits 14 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.o
-___stacklo 0 0 ABS 0 - C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.o
+___stackhi 0 0 ABS 0 - C:\Users\Pablo\AppData\Local\Temp\xcAsaus.o
+___stacklo 0 0 ABS 0 - C:\Users\Pablo\AppData\Local\Temp\xcAsaus.o
 _I2C_Slave_Init 3C8 0 CODE 0 text3 dist/default/production\SLAVE2.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\SLAVE2.X.production.o
 _TRISAbits 85 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
@@ -305,7 +302,7 @@ _SSPBUF 13 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.o
+___int_sp 0 0 STACK 2 stack C:\Users\Pablo\AppData\Local\Temp\xcAsaus.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -318,6 +315,7 @@ __Hmaintext 0 0 ABS 0 maintext -
 __end_of_portsetup 45C 0 CODE 0 text2 dist/default/production\SLAVE2.X.production.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 4012 0 CONFIG 4 config -
+__end_of_leer_temp 314 0 CODE 0 text5 dist/default/production\SLAVE2.X.production.o
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
@@ -328,7 +326,6 @@ __Lidloc 0 0 IDLOC 5 idloc -
 __Lstack 0 0 STACK 2 stack -
 _PORTAbits 5 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _PORTDbits 8 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
-_INTCONbits B 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 18 0 CODE 0 init -
@@ -353,21 +350,20 @@ __S0 22E 0 ABS 0 - -
 __S1 7E 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 _isr 10C 0 CODE 0 text4 dist/default/production\SLAVE2.X.production.o
+_leer_temp 276 0 CODE 0 text5 dist/default/production\SLAVE2.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 __end_of_DHT11_Start 436 0 CODE 0 text6 dist/default/production\SLAVE2.X.production.o
 __end_of_setupINTOSC 10C 0 CODE 0 text1 dist/default/production\SLAVE2.X.production.o
 __end_of_isr 1D0 0 CODE 0 text4 dist/default/production\SLAVE2.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Pablo\AppData\Local\Temp\xcAs6mo.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Pablo\AppData\Local\Temp\xcAsaus.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __pmaintext 390 0 CODE 0 maintext dist/default/production\SLAVE2.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 I2C_Slave_Init@address 29 0 BANK0 1 cstackBANK0 dist/default/production\SLAVE2.X.production.o
-_readTemp 276 0 CODE 0 text5 dist/default/production\SLAVE2.X.production.o
 _ADCON0bits 1F 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _ADCON1bits 9F 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
-__end_of_readTemp 314 0 CODE 0 text5 dist/default/production\SLAVE2.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
@@ -408,7 +404,6 @@ __end_of_main 3C8 0 CODE 0 maintext dist/default/production\SLAVE2.X.production.
 _ANSEL 188 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _SSPIE 463 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _SSPIF 63 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
-_TRISB 86 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 _check 24 0 BANK0 1 bssBANK0 dist/default/production\SLAVE2.X.production.o

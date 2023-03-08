@@ -59,11 +59,11 @@
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
 "70 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"218
+"232
 [v _portsetup portsetup `(v  1 e 1 0 ]
-"233
+"247
 [v _Escribir_dato Escribir_dato `(v  1 e 1 0 ]
-"242
+"256
 [v _leer_temperatura leer_temperatura `(v  1 e 1 0 ]
 "10 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
 [v _setupINTOSC setupINTOSC `(v  1 e 1 0 ]
@@ -196,7 +196,7 @@
 "70
 [v _main main `(v  1 e 1 0 ]
 {
-"216
+"230
 } 0
 "10 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\oscilador.c
 [v _setupINTOSC setupINTOSC `(v  1 e 1 0 ]
@@ -206,10 +206,10 @@
 [v setupINTOSC@IRCF IRCF `uc  1 a 1 0 ]
 "37
 } 0
-"218 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+"232 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
 [v _portsetup portsetup `(v  1 e 1 0 ]
 {
-"231
+"245
 } 0
 "16 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
 [v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
@@ -275,10 +275,10 @@
 {
 "51
 } 0
-"242 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+"256 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
 [v _leer_temperatura leer_temperatura `(v  1 e 1 0 ]
 {
-"250
+"264
 } 0
 "74 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\I2C.c
 [v _I2C_Master_Read I2C_Master_Read `(us  1 e 2 0 ]
@@ -289,7 +289,7 @@
 [v I2C_Master_Read@a a `us  1 p 2 0 ]
 "89
 } 0
-"233 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
+"247 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\main.c
 [v _Escribir_dato Escribir_dato `(v  1 e 1 0 ]
 {
 [v Escribir_dato@dato dato `uc  1 a 1 wreg ]
@@ -297,7 +297,7 @@
 [v Escribir_dato@posx posx `uc  1 p 1 12 ]
 [v Escribir_dato@posy posy `uc  1 p 1 13 ]
 [v Escribir_dato@dato dato `uc  1 a 1 0 ]
-"240
+"254
 } 0
 "12 D:\Backup\Documentos\GitHub\ED2-Proyecto-1\Proyecto1-Master.X\conversiones.c
 [v _inttochar inttochar `(uc  1 e 1 0 ]

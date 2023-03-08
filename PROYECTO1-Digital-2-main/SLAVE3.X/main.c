@@ -5,7 +5,7 @@
  Proyecto: Proyecto 1 - Slave 2 - Sensor DHT11
  Hardware PIC16F887
  Creado: 09/02/23
- Última Modificación: 7/03/23*/
+ Última Modificación: 8/03/23*/
 //*****************************************************************************
 // Palabra de configuración
 //*****************************************************************************
@@ -37,14 +37,19 @@
 #include "setupADC.h"
 #include "oscilador.h"
 #include <xc.h>
+#include "PWM.h"
 //*****************************************************************************
 // Definición de variables
 //*****************************************************************************
 //#define _XTAL_FREQ 500000
 #define _XTAL_FREQ 8000000
 #define valTMR0 100
-uint8_t dato;
+uint8_t dato = 0;
 uint8_t SERVO = 0;
+uint8_t ADC;
+uint16_t dutycycle = 0;
+uint16_t dutyCycleApply = 0;
+const uint32_t pwmFreq = 5000;
 
 //*****************************************************************************
 // Definición de funciones para que se puedan colocar después del main de lo 
@@ -53,6 +58,7 @@ uint8_t SERVO = 0;
 void portsetup(void);
 void setupPWM(void);                //setup del primer pwm
 void setupTMR0(void);
+
     
 uint8_t z;
 
@@ -67,14 +73,14 @@ void __interrupt() isr(void){
         INTCONbits.T0IF = 0;
         TMR0 = valTMR0;                   // Valor inicial del TMR0
         // Revisa el valor de la variable para colocar la posición del servo
-        if(SERVO ==0){
+        if(SERVO == 0){                   // Periodo para 0°
             PORTDbits.RD1 = 1;
             __delay_us(900);
             PORTDbits.RD1 = 0;
-        }
-        else{
+        }                                 // Periodo para 90° aprox
+        else if (SERVO == 1){
             PORTDbits.RD1 = 1;
-            __delay_us(1800);
+            __delay_us(1900);
             PORTDbits.RD1 = 0;
         }
     }
@@ -95,7 +101,7 @@ void __interrupt() isr(void){
             //PIR1bits.SSPIF = 0;       // Limpia bandera de interrupción recepción/transmisión SSP
             SSPCONbits.CKP = 1;         // Habilita entrada de pulsos de reloj SCL
             while(!SSPSTATbits.BF);     // Esperar a que la recepción se complete
-            SERVO = SSPBUF;
+            dato = SSPBUF;
             __delay_us(250);
             
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
@@ -117,15 +123,40 @@ void __interrupt() isr(void){
 // Main
 //*****************************************************************************
 void main(void) {
-    setupINTOSC(7);
+    setupINTOSC(7);     //8MHz
     portsetup();
     setupTMR0();
-    dato = 0;
+    setupPWM();
+    initPwm(pwmFreq); // Initialize PWM
+    applyPWMDutyCycle(dutycycle,pwmFreq);
+    ADC_config(0x01);
     
     //*************************************************************************
     // Loop infinito
     //*************************************************************************
-    while(1){}
+    while(1){
+        if (dato == 0){
+            SERVO = 0;
+        }
+        else if(dato == 1){
+            SERVO = 1;
+        }
+        else if (dato == 2){
+            ADC = ADC_read(0);          // Hace la lectura del ADC
+            dutycycle = 4*ADC;          // Mapea a un valor de 1024
+            if (dutycycle != dutyCycleApply){   //Compara Dutycycle actual con el nuevo
+                applyPWMDutyCycle(dutycycle,pwmFreq);
+                dutyCycleApply = dutycycle;     // Aplica el nuevo Duty Cycle
+            }  
+        }
+        else if (dato == 3){
+            dutycycle = 0;              // Si recibe un 3 se apaga el motor
+            if (dutycycle != dutyCycleApply){
+                applyPWMDutyCycle(dutycycle,pwmFreq);
+                dutyCycleApply = dutycycle;     // Aplica el Duty Cycle = 0
+            }  
+        } 
+    }
 }
 //*****************************************************************************
 // Función de Inicialización
@@ -134,9 +165,9 @@ void main(void) {
 void portsetup(){
     ANSEL = 0;
     ANSELH = 0;
-    TRISDbits.TRISD1 = 0;
+    TRISDbits.TRISD1 = 0;       // Pin de salida del PWM para servomotor
     PORTDbits.RD1 = 0;
-    I2C_Slave_Init(0xb0); 
+    I2C_Slave_Init(0xb0);       // Inicia esclavo con dirección 0xb
 }
 
 void setupTMR0(void){
@@ -147,7 +178,8 @@ void setupTMR0(void){
     OPTION_REGbits.T0CS = 0;    // Fosc/4
     OPTION_REGbits.T0SE = 0;    // bit 4 TMR0 Source Edge Select bit 0 = low/high 1 = high/low
     OPTION_REGbits.PSA = 0;     // Prescaler para TMR0
-    OPTION_REGbits.PS = 0b111;  // Prescaler 1:256
-    TMR0 = valTMR0;                 // Valor inicial del TMR0
+    OPTION_REGbits.PS = 0b111;  // Prescaler 1:64
+    TMR0 = valTMR0;             // Valor inicial del TMR0
 }
+
 

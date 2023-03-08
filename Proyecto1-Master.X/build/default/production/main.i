@@ -2997,7 +2997,15 @@ void main(void) {
             I2C_Master_Write(0);
             I2C_Master_Stop();
             SERVO = 0;
+
             _delay((unsigned long)((500)*(8000000/4000.0)));
+
+            I2C_Master_Start();
+            I2C_Master_Write(0xb0);
+            I2C_Master_Write(0x02);
+            I2C_Master_Stop();
+
+
             while(PORTBbits.RB3 & !((sec == segundos) & (min == minutos)) ){
 
                 segundos = leer_x(0x00);
@@ -3009,6 +3017,12 @@ void main(void) {
                 _delay((unsigned long)((10)*(8000000/4000.0)));
 
             }
+
+            I2C_Master_Start();
+            I2C_Master_Write(0xb0);
+            I2C_Master_Write(0x03);
+            I2C_Master_Stop();
+
 
             Escribir_dato(0, 14, 2);
             Escribir_dato(0, 11, 2);

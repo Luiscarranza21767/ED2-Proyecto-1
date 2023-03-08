@@ -167,8 +167,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 27 "main.c" 2
-
+# 28 "main.c" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\proc\\pic16f887.h" 1 3
 # 45 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\proc\\pic16f887.h" 3
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\__at.h" 1 3
@@ -2579,8 +2578,7 @@ extern volatile __bit nW __attribute__((address(0x4A2)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x4A2)));
-# 28 "main.c" 2
-
+# 29 "main.c" 2
 # 1 "./I2C.h" 1
 # 18 "./I2C.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
@@ -2656,15 +2654,20 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 18 "./I2C.h" 2
-
+# 19 "./I2C.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
-# 20 "./I2C.h" 2
-
-# 1 "./I2C.h" 1
 # 21 "./I2C.h" 2
-# 30 "./I2C.h"
+# 1 "./I2C.h" 1
+# 22 "./I2C.h" 2
+
+
+
+
+
+
+
+
 void I2C_Master_Init(const unsigned long c);
 
 
@@ -2701,13 +2704,11 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 29 "main.c" 2
-
+# 30 "main.c" 2
 # 1 "./setupADC.h" 1
 # 14 "./setupADC.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
-# 14 "./setupADC.h" 2
-
+# 15 "./setupADC.h" 2
 
 
 
@@ -2715,8 +2716,7 @@ void I2C_Slave_Init(uint8_t address);
 
 void ADC_config(int channel);
 uint16_t ADC_read(int channel);
-# 30 "main.c" 2
-
+# 31 "main.c" 2
 # 1 "./oscilador.h" 1
 
 
@@ -2733,8 +2733,7 @@ uint16_t ADC_read(int channel);
 
 
 void setupINTOSC(uint8_t IRCF);
-# 31 "main.c" 2
-
+# 32 "main.c" 2
 
 
 
@@ -2762,7 +2761,10 @@ void setupPWM(void);
 uint32_t pwmMaxDuty(const uint32_t freq);
 void initPwm(const uint32_t freq);
 void applyPWMDutyCycle(uint16_t dutyCycle, const uint32_t freq);
-# 71 "main.c"
+
+
+
+
 void __attribute__((picinterrupt(("")))) isr(void){
    if(PIR1bits.SSPIF == 1){
 
@@ -2797,7 +2799,8 @@ void __attribute__((picinterrupt(("")))) isr(void){
 
         PIR1bits.SSPIF = 0;
     }
-# 126 "main.c"
+
+
 }
 
 
@@ -2814,23 +2817,23 @@ void main(void) {
 
 
     while(1){
-        PORTDbits.RD0 = 0;
-        PORTDbits.RD1 = 1;
-        ADC = ADC_read(0);
-        dutycycle = 4*ADC;
-
-        if (dutycycle != dutyCycleApply){
-            applyPWMDutyCycle(dutycycle,pwmFreq);
-            dutyCycleApply = dutycycle;
+        if (z == 1){
+            PORTDbits.RD0 = 0;
+            PORTDbits.RD1 = 1;
+            ADC = ADC_read(0);
+            dutycycle = 4*ADC;
+            if (dutycycle != dutyCycleApply){
+                applyPWMDutyCycle(dutycycle,pwmFreq);
+                dutyCycleApply = dutycycle;
+            }
         }
-
-        if (dutycycle < 0){
+        else if (z == 0){
             dutycycle = 0;
+            if (dutycycle != dutyCycleApply){
+                applyPWMDutyCycle(dutycycle,pwmFreq);
+                dutyCycleApply = dutycycle;
+            }
         }
-        else if (dutycycle >1023){
-            dutycycle = 1023;
-        }
-# 168 "main.c"
     }
     return;
 }
@@ -2842,7 +2845,7 @@ void setup(void){
     ANSELH = 0;
 
 
-    TRISB = 0b00000111;
+    TRISB = 0b00000000;
     TRISD = 0;
 
     PORTB = 0;
@@ -2850,10 +2853,8 @@ void setup(void){
     PORTD = 0;
 
 
-
-
     INTCONbits.GIE = 1;
-# 200 "main.c"
+
     I2C_Slave_Init(0x50);
 }
 
