@@ -2,7 +2,7 @@
  IE3054 Electrónica Digital 2
  Autor: Luis Pablo Carranza y Miguel Chacón
  Compilador: XC8, MPLAB X IDE (v6.00)
- Proyecto: Proyecto 1 - Slave 2 - Sensor DHT11
+ Proyecto: Proyecto 1 - Slave 3 - Motores
  Hardware PIC16F887
  Creado: 09/02/23
  Última Modificación: 8/03/23*/

@@ -1,4 +1,11 @@
-//SLAVE1 MOTOR DC
+/* Universidad del Valle de Guatemala
+ IE3054 Electrónica Digital 2
+ Autor: Luis Pablo Carranza y Miguel Chacón
+ Compilador: XC8, MPLAB X IDE (v6.00)
+ Proyecto: Proyecto 1 - Slave 1 - Sensor de velocidad
+ Hardware PIC16F887
+ Creado: 09/02/23
+ Última Modificación: 7/03/23*/
 //*****************************************************************************
 // Palabra de configuración
 //*****************************************************************************
@@ -21,7 +28,7 @@
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 
-//*****************************************************************************
+//******************************************    ***********************************
 // Definición e importación de librerías
 //*****************************************************************************
 #include <stdint.h>
@@ -30,33 +37,16 @@
 #include "setupADC.h"
 #include "oscilador.h"
 #include <xc.h>
+
 //*****************************************************************************
 // Definición de variables
 //*****************************************************************************
-#define _XTAL_FREQ 2000000
-#define TMR2PRESCALE 4
-uint8_t z;
+//#define _XTAL_FREQ 500000
+#define _XTAL_FREQ 8000000
 uint8_t dato;
-uint8_t ADC;
-uint8_t vel;
-unsigned int ADC_RES; //valor del ADC ccp1
-unsigned int valDC; //valor que se carga para el servo
-unsigned int valDCL; //adc low
-unsigned int valDCH; //adc high
+uint8_t z;
 
-uint16_t dutycycle = 0;
-uint16_t dutyCycleApply = 0;
-const uint32_t pwmFreq = 5000;
-//*****************************************************************************
-// Definición de funciones para que se puedan colocar después del main de lo 
-// contrario hay que colocarlos todas las funciones antes del main
-//*****************************************************************************
 void setup(void);
-void setupPWM(void);                //setup del primer pwm
-uint32_t pwmMaxDuty(const uint32_t freq);
-void initPwm(const uint32_t freq);
-void applyPWMDutyCycle(uint16_t dutyCycle, const uint32_t freq);
-
 //*****************************************************************************
 // Código de Interrupción 
 //*****************************************************************************
@@ -86,7 +76,7 @@ void __interrupt() isr(void){
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
             BF = 0;
-            SSPBUF = ADC;
+            SSPBUF = PORTB;
             SSPCONbits.CKP = 1;
             __delay_us(250);
             while(SSPSTATbits.BF);
@@ -103,34 +93,13 @@ void __interrupt() isr(void){
 void main(void) {
     setupINTOSC(5); //INTRC A 2MHz
     setup();
-    setupPWM();
-    initPwm(pwmFreq); // Initialize PWM
-    applyPWMDutyCycle(dutycycle,pwmFreq);
-    ADC_config(0x01);
+    
     dato = 0;
     //*************************************************************************
     // Loop infinito
     //*************************************************************************
-    while(1){        
-        if (z == 1){
-            PORTDbits.RD0 = 0;
-            PORTDbits.RD1 = 1;
-            ADC = ADC_read(0);
-            dutycycle = 4*ADC;
-            if (dutycycle != dutyCycleApply){
-                applyPWMDutyCycle(dutycycle,pwmFreq);
-                dutyCycleApply = dutycycle;
-            }  
-        }
-        else if (z == 0){
-            dutycycle = 0;
-            if (dutycycle != dutyCycleApply){
-                applyPWMDutyCycle(dutycycle,pwmFreq);
-                dutyCycleApply = dutycycle; 
-            }  
-        }    
-    }   
-    return;
+    while(1){ }       
+       
 }
 //*****************************************************************************
 // Función de Inicialización
@@ -151,47 +120,4 @@ void setup(void){
     INTCONbits.GIE = 1; //interrupciones globales
 
     I2C_Slave_Init(0x50);   
-}
-
-void setupPWM(void){
-    // Paso 1
-    TRISCbits.TRISC2 = 1; 
-    // Paso 2
-    //PR2 = 249;      // Periodo de 20mS  
-    // Paso 3
-    CCP1CON = 0b00001100;        // P1A como PWM 
-   // Paso 4
-    //CCP1CONbits.DC1B = valDCL;        // CCPxCON<5:4>
-    //CCPR1L = 0;        // CCPR1L   
-    // Paso 5
-    TMR2IF = 0;
-    T2CONbits.T2CKPS = 0b01;      // Prescaler de 1:16
-    TMR2ON = 1;         // Encender timer 2 
-    // Paso 6
-    while(!TMR2IF);
-    TRISCbits.TRISC2 = 0;// Habilitamos la salida del PWM   
-}
-
-uint32_t pwmMaxDuty(const uint32_t freq)
-{
-  return(_XTAL_FREQ/(freq*TMR2PRESCALE));
-}
-//Calculate the PR2 value
-void initPwm(const uint32_t freq)
-{
-    //calculate period register value
-    PR2 = (uint8_t)((_XTAL_FREQ/(freq*4*TMR2PRESCALE)) - 1);
-}
-
-//Give a value in between 0 and 1024 for duty-cycle
-void applyPWMDutyCycle(uint16_t dutyCycle, const uint32_t freq)
-{
-    if(dutyCycle<1024)
-    {
-        //1023 because 10 bit resolution
-        dutyCycle = (uint16_t)(((float)dutyCycle/1023)*pwmMaxDuty(freq));
-        CCP1CON &= 0xCF;                 // Make bit4 and 5 zero (Store fraction part of duty cycle)
-        CCP1CON |= (0x30&(dutyCycle<<4)); // Assign Last 2 LSBs to CCP1CON
-        CCPR1L = (uint8_t)(dutyCycle>>2); // Put MSB 8 bits in CCPR1L
-    }
 }

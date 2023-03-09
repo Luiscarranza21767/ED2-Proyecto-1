@@ -7,11 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-
-
-
-
-
+# 13 "main.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -167,7 +163,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 28 "main.c" 2
+# 35 "main.c" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\proc\\pic16f887.h" 1 3
 # 45 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\proc\\pic16f887.h" 3
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\__at.h" 1 3
@@ -2578,7 +2574,7 @@ extern volatile __bit nW __attribute__((address(0x4A2)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x4A2)));
-# 29 "main.c" 2
+# 36 "main.c" 2
 # 1 "./I2C.h" 1
 # 18 "./I2C.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
@@ -2704,7 +2700,7 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 30 "main.c" 2
+# 37 "main.c" 2
 # 1 "./setupADC.h" 1
 # 14 "./setupADC.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
@@ -2716,7 +2712,7 @@ void I2C_Slave_Init(uint8_t address);
 
 void ADC_config(int channel);
 uint16_t ADC_read(int channel);
-# 31 "main.c" 2
+# 38 "main.c" 2
 # 1 "./oscilador.h" 1
 
 
@@ -2733,35 +2729,18 @@ uint16_t ADC_read(int channel);
 
 
 void setupINTOSC(uint8_t IRCF);
-# 32 "main.c" 2
+# 39 "main.c" 2
 
 
 
 
 
 
-uint8_t z;
+
 uint8_t dato;
-uint8_t ADC;
-uint8_t vel;
-unsigned int ADC_RES;
-unsigned int valDC;
-unsigned int valDCL;
-unsigned int valDCH;
-
-uint16_t dutycycle = 0;
-uint16_t dutyCycleApply = 0;
-const uint32_t pwmFreq = 5000;
-
-
-
+uint8_t z;
 
 void setup(void);
-void setupPWM(void);
-uint32_t pwmMaxDuty(const uint32_t freq);
-void initPwm(const uint32_t freq);
-void applyPWMDutyCycle(uint16_t dutyCycle, const uint32_t freq);
-
 
 
 
@@ -2786,14 +2765,14 @@ void __attribute__((picinterrupt(("")))) isr(void){
             while(!SSPSTATbits.BF);
             z = SSPBUF;
             dato = SSPBUF;
-            _delay((unsigned long)((250)*(2000000/4000000.0)));
+            _delay((unsigned long)((250)*(8000000/4000000.0)));
 
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
             BF = 0;
-            SSPBUF = ADC;
+            SSPBUF = PORTB;
             SSPCONbits.CKP = 1;
-            _delay((unsigned long)((250)*(2000000/4000000.0)));
+            _delay((unsigned long)((250)*(8000000/4000000.0)));
             while(SSPSTATbits.BF);
         }
 
@@ -2808,34 +2787,13 @@ void __attribute__((picinterrupt(("")))) isr(void){
 void main(void) {
     setupINTOSC(5);
     setup();
-    setupPWM();
-    initPwm(pwmFreq);
-    applyPWMDutyCycle(dutycycle,pwmFreq);
-    ADC_config(0x01);
+
     dato = 0;
 
 
 
-    while(1){
-        if (z == 1){
-            PORTDbits.RD0 = 0;
-            PORTDbits.RD1 = 1;
-            ADC = ADC_read(0);
-            dutycycle = 4*ADC;
-            if (dutycycle != dutyCycleApply){
-                applyPWMDutyCycle(dutycycle,pwmFreq);
-                dutyCycleApply = dutycycle;
-            }
-        }
-        else if (z == 0){
-            dutycycle = 0;
-            if (dutycycle != dutyCycleApply){
-                applyPWMDutyCycle(dutycycle,pwmFreq);
-                dutyCycleApply = dutycycle;
-            }
-        }
-    }
-    return;
+    while(1){ }
+
 }
 
 
@@ -2856,47 +2814,4 @@ void setup(void){
     INTCONbits.GIE = 1;
 
     I2C_Slave_Init(0x50);
-}
-
-void setupPWM(void){
-
-    TRISCbits.TRISC2 = 1;
-
-
-
-    CCP1CON = 0b00001100;
-
-
-
-
-    TMR2IF = 0;
-    T2CONbits.T2CKPS = 0b01;
-    TMR2ON = 1;
-
-    while(!TMR2IF);
-    TRISCbits.TRISC2 = 0;
-}
-
-uint32_t pwmMaxDuty(const uint32_t freq)
-{
-  return(2000000/(freq*4));
-}
-
-void initPwm(const uint32_t freq)
-{
-
-    PR2 = (uint8_t)((2000000/(freq*4*4)) - 1);
-}
-
-
-void applyPWMDutyCycle(uint16_t dutyCycle, const uint32_t freq)
-{
-    if(dutyCycle<1024)
-    {
-
-        dutyCycle = (uint16_t)(((float)dutyCycle/1023)*pwmMaxDuty(freq));
-        CCP1CON &= 0xCF;
-        CCP1CON |= (0x30&(dutyCycle<<4));
-        CCPR1L = (uint8_t)(dutyCycle>>2);
-    }
 }
