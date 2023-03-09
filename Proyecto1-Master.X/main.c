@@ -64,7 +64,7 @@ uint8_t SERVO = 0;
 void portsetup(void);
 void Escribir_dato(uint8_t dato, uint8_t posx, uint8_t posy);
 void leer_temperatura(void);
-
+void envio_ESP(void);
 
 
 void main(void) {
@@ -101,6 +101,7 @@ void main(void) {
         
         min = leer_x(0x01);     // Leer minuto
         Escribir_dato(min, 11, 1);
+        envio_ESP();
         
         // Revisa si se desea abrir/cerrar la tapa
         if (!PORTBbits.RB1){
@@ -126,7 +127,7 @@ void main(void) {
             while(PORTBbits.RB3){   // Sale del modo hasta que se presiona B3
                 //__delay_ms(5);
                 leer_temperatura();
-                
+                envio_ESP();
                 Escribir_dato(sec, 14, 1);
                 Escribir_dato(min, 11, 1);
                 // Cambio de modo
@@ -140,7 +141,7 @@ void main(void) {
                     }
                 }
                 // Incrementos
-                if(PORTBbits.RB6 == 0){ // Si se presiona incrementa
+                if(!PORTBbits.RB6){ // Si se presiona incrementa
                     //__delay_ms(5);
                     if (modo == 0){
                         if (sec<59){
@@ -162,7 +163,7 @@ void main(void) {
                 }
 
                 // Decrementos
-                if(PORTBbits.RB5 == 0){ // Si se presiona decrementa
+                if(!PORTBbits.RB5){ // Si se presiona decrementa
                     //__delay_ms(5);
 
                     if (modo == 0){
@@ -197,7 +198,7 @@ void main(void) {
             I2C_Master_Stop();
             SERVO = 0;
             
-            __delay_ms(500);
+            __delay_ms(400);
             
             I2C_Master_Start();            //Incia comunicaión I2C
             I2C_Master_Write(0xb0);        //Escoje dirección del slave 3
@@ -214,8 +215,11 @@ void main(void) {
                 //Lee la temperatura por si es necesario actualizar
                 leer_temperatura();
                 __delay_ms(10);
+                envio_ESP();
                 
             }
+            segundos = 0;
+            minutos = 0;
             
             I2C_Master_Start();            //Incia comunicaión I2C
             I2C_Master_Write(0xb0);        //Escoje dirección del slave 3
@@ -259,6 +263,18 @@ void leer_temperatura(){
     tempint = I2C_Master_Read(0);      //lee posicion de reloj
     //tempdec = I2C_Master_Read(0);
     I2C_Master_Stop();             //Termina comunicaion I2C
-    __delay_ms(30);
     Escribir_dato(tempint, 4, 2);
 }    
+
+void envio_ESP(void){
+    I2C_Master_Start();     // Inicia la comunicación I2C
+    I2C_Master_Write(0x90);        
+    I2C_Master_Write(tempint);
+    I2C_Master_Write(10);
+    I2C_Master_Write(min);
+    I2C_Master_Write(sec);
+    I2C_Master_Write(minutos);
+    I2C_Master_Write(segundos);
+    I2C_Master_Stop();             //Termina comunicaion I2C
+    __delay_ms(10);
+}
