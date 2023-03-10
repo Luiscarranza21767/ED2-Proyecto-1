@@ -2638,7 +2638,7 @@ extern __bank0 __bit __timeout;
 # 12 "./conversiones.h" 2
 
 
-uint8_t descomponer(int pos, uint8_t num);
+uint8_t descomponer(int pos, uint16_t num);
 char inttochar(uint8_t num);
 # 7 "conversiones.c" 2
 
@@ -2681,7 +2681,7 @@ char inttochar(uint8_t num){
     }
 }
 
-uint8_t descomponer(int pos, uint8_t num){
+uint8_t descomponer(int pos, uint16_t num){
     uint8_t cent;
     uint8_t dec;
     uint8_t uni;

@@ -2690,7 +2690,7 @@ void setupINTOSC(uint8_t IRCF);
 # 12 "./conversiones.h" 2
 
 
-uint8_t descomponer(int pos, uint8_t num);
+uint8_t descomponer(int pos, uint16_t num);
 char inttochar(uint8_t num);
 # 40 "main.c" 2
 
@@ -2852,11 +2852,13 @@ float conver;
 char valADC[3];
 char unidad;
 char decena;
+char centena;
 
 uint8_t tempint = 0;
 
 uint8_t sec, segundos;
 uint8_t min, minutos;
+uint8_t vel;
 
 uint8_t modo;
 char buffer[3];
@@ -2866,7 +2868,7 @@ void portsetup(void);
 void Escribir_dato(uint8_t dato, uint8_t posx, uint8_t posy);
 void leer_temperatura(void);
 void envio_ESP(void);
-
+void leer_velocidad(void);
 
 void main(void) {
 
@@ -2883,6 +2885,8 @@ void main(void) {
     Lcd_Write_String("S:  :");
     Lcd_Set_Cursor(2,1);
     Lcd_Write_String("T:    C");
+    Lcd_Set_Cursor(1,1);
+    Lcd_Write_String("V:   rpm");
 
 
     modo = 0;
@@ -3017,6 +3021,8 @@ void main(void) {
                 leer_temperatura();
                 _delay((unsigned long)((10)*(8000000/4000.0)));
                 envio_ESP();
+                _delay((unsigned long)((10)*(8000000/4000.0)));
+                leer_velocidad();
 
             }
             segundos = 0;
@@ -3028,9 +3034,12 @@ void main(void) {
             I2C_Master_Stop();
 
 
+
             Escribir_dato(0, 14, 2);
             Escribir_dato(0, 11, 2);
         }
+# 250 "main.c"
+        _delay((unsigned long)((100)*(8000000/4000.0)));
     }
 }
 
@@ -3039,7 +3048,6 @@ void portsetup(){
     ANSELH = 0;
     TRISD = 0;
     PORTD = 0;
-
 
     TRISB = 0b11111110;
     PORTB = 0b11111110;
@@ -3071,11 +3079,29 @@ void envio_ESP(void){
     I2C_Master_Start();
     I2C_Master_Write(0x90);
     I2C_Master_Write(tempint);
-    I2C_Master_Write(10);
+    I2C_Master_Write(vel);
     I2C_Master_Write(min);
     I2C_Master_Write(sec);
     I2C_Master_Write(minutos);
     I2C_Master_Write(segundos);
     I2C_Master_Stop();
     _delay((unsigned long)((10)*(8000000/4000.0)));
+}
+
+void leer_velocidad(){
+
+    I2C_Master_Start();
+    I2C_Master_Write(0x81);
+    vel = I2C_Master_Read(0);
+    I2C_Master_Stop();
+
+    Lcd_Set_Cursor(1, 5);
+    unidad = inttochar(descomponer(0, vel));
+    Lcd_Write_Char(unidad);
+    Lcd_Set_Cursor(1, 4);
+    decena = inttochar(descomponer(1, vel));
+
+
+
+
 }

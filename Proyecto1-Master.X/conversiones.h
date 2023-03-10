@@ -11,7 +11,7 @@
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include <stdint.h>
 
-uint8_t descomponer(int pos, uint8_t num);
+uint8_t descomponer(int pos, uint16_t num);
 char inttochar(uint8_t num);
 
 #endif	/* CONVERSIONES_H */

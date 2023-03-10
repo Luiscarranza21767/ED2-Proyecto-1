@@ -51,11 +51,13 @@ float conver;
 char valADC[3];
 char unidad;
 char decena;
+char centena;
 
 uint8_t tempint = 0;
 
 uint8_t sec, segundos;
 uint8_t min, minutos;
+uint8_t vel;
 
 uint8_t modo;
 char buffer[3];
@@ -65,7 +67,7 @@ void portsetup(void);
 void Escribir_dato(uint8_t dato, uint8_t posx, uint8_t posy);
 void leer_temperatura(void);
 void envio_ESP(void);
-
+void leer_velocidad(void);
 
 void main(void) {
     
@@ -82,6 +84,8 @@ void main(void) {
     Lcd_Write_String("S:  :");
     Lcd_Set_Cursor(2,1);
     Lcd_Write_String("T:    C");
+    Lcd_Set_Cursor(1,1);
+    Lcd_Write_String("V:   rpm");
     
 
     modo = 0;
@@ -216,6 +220,8 @@ void main(void) {
                 leer_temperatura();
                 __delay_ms(10);
                 envio_ESP();
+                __delay_ms(10);
+                leer_velocidad();
                 
             }
             segundos = 0;
@@ -226,10 +232,22 @@ void main(void) {
             I2C_Master_Write(0x03);       
             I2C_Master_Stop();
             
+            
             // Cuando termina resetea la información del display
             Escribir_dato(0, 14, 2);
             Escribir_dato(0, 11, 2);
         }
+//        vel = 0;
+//        Lcd_Set_Cursor(1, 5);
+//        unidad = inttochar(descomponer(0, vel));
+//        Lcd_Write_Char(unidad);
+//        Lcd_Set_Cursor(1, 4);
+//        decena = inttochar(descomponer(1, vel));
+//        Lcd_Write_Char(decena);
+//        Lcd_Set_Cursor(1, 3);
+//        centena = inttochar(descomponer(2, vel));
+//        Lcd_Write_Char(centena);
+        __delay_ms(100);
     }
 }
 
@@ -237,8 +255,7 @@ void portsetup(){
     ANSEL = 0;
     ANSELH = 0; 
     TRISD = 0;
-    PORTD = 0;
-    
+    PORTD = 0; 
     // Configuración del puerto B 
     TRISB = 0b11111110;
     PORTB = 0b11111110;
@@ -270,7 +287,7 @@ void envio_ESP(void){
     I2C_Master_Start();     // Inicia la comunicación I2C
     I2C_Master_Write(0x90);        
     I2C_Master_Write(tempint);
-    I2C_Master_Write(10);
+    I2C_Master_Write(vel);
     I2C_Master_Write(min);
     I2C_Master_Write(sec);
     I2C_Master_Write(minutos);
@@ -278,3 +295,21 @@ void envio_ESP(void){
     I2C_Master_Stop();             //Termina comunicaion I2C
     __delay_ms(10);
 }
+
+void leer_velocidad(){
+    
+    I2C_Master_Start();     // Inicia la comunicación I2C
+    I2C_Master_Write(0x81);        
+    vel = I2C_Master_Read(0);      //lee posicion de reloj
+    I2C_Master_Stop();             //Termina comunicaion I2C
+
+    Lcd_Set_Cursor(1, 5);
+    unidad = inttochar(descomponer(0, vel));
+    Lcd_Write_Char(unidad);
+    Lcd_Set_Cursor(1, 4);
+    decena = inttochar(descomponer(1, vel));
+//    Lcd_Write_Char(decena);
+//    Lcd_Set_Cursor(1, 3);
+//    centena = inttochar(descomponer(2, vel));
+//    Lcd_Write_Char(centena);
+}   

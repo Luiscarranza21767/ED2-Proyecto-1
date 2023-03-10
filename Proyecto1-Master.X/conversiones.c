@@ -42,7 +42,7 @@ char inttochar(uint8_t num){
     }
 }
 //Funciones para separar un numero en unidades, decenas y centenas
-uint8_t descomponer(int pos, uint8_t num){
+uint8_t descomponer(int pos, uint16_t num){
     uint8_t cent;
     uint8_t dec;
     uint8_t uni;

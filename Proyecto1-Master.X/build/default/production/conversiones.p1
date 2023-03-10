@@ -383,12 +383,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 138 ]
 }
 "45
-[; ;conversiones.c: 45: uint8_t descomponer(int pos, uint8_t num){
-[v _descomponer `(uc ~T0 @X0 1 ef2`i`uc ]
+[; ;conversiones.c: 45: uint8_t descomponer(int pos, uint16_t num){
+[v _descomponer `(uc ~T0 @X0 1 ef2`i`ui ]
 {
 [e :U _descomponer ]
 [v _pos `i ~T0 @X0 1 r1 ]
-[v _num `uc ~T0 @X0 1 r2 ]
+[v _num `ui ~T0 @X0 1 r2 ]
 [f ]
 "46
 [; ;conversiones.c: 46:     uint8_t cent;
@@ -401,10 +401,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _uni `uc ~T0 @X0 1 a ]
 "49
 [; ;conversiones.c: 49:     cent = (num/100);
-[e = _cent -> / -> _num `i -> 100 `i `uc ]
+[e = _cent -> / _num -> -> 100 `i `ui `uc ]
 "50
 [; ;conversiones.c: 50:     dec = (num%100);
-[e = _dec -> % -> _num `i -> 100 `i `uc ]
+[e = _dec -> % _num -> -> 100 `i `ui `uc ]
 "51
 [; ;conversiones.c: 51:     uni = (dec%10);
 [e = _uni -> % -> _dec `i -> 10 `i `uc ]
